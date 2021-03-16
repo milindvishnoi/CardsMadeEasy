@@ -1,0 +1,38 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.general-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+  width: 300px;
+  height: 425px;
+  border-radius: 15px;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.general-card .img {
+  background-attachment: scroll;
+  background-size: cover;
+  height: 200px;
+}
+
+.general-card h1 {
+  margin-top: 10px;
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.general-card p {
+  font-size: 16px;
+}
+
+.general-card button {
+  border-radius: 0;
+  width: 50%;
+  height: 60px;
+}
+
