@@ -24,48 +24,97 @@ class Card {
   }
 
   makeGeneralCard(title, desc, imgSrc, button1, button2) {
-    this.setupFrontView(title, desc, imgSrc, button1, button2)
+    this._setupGeneralFrontView(title, desc, imgSrc, button1, button2)
     this.frontView.className = 'general-card'
 
     this.card.appendChild(this.frontView)
     this.mainDiv.append(this.card)
   }
+
+  makeTeammateCard(name, title, imgSrc, links) {
+    this._setUpTeammateFrontView(name, title, imgSrc, links)
+    this.card.className = 'teammate-card'
+
+    this.card.appendChild(this.frontView)
+    this.mainDiv.append(this.card)
+  }
   
-  setupFrontView(title, desc, imgSrc, button1, button2) {
+  _setupGeneralFrontView(title, desc, imgSrc, button1, button2) {
     // Setting up the img
-    let imgContainer = document.createElement('div')
+    const imgContainer = document.createElement('div')
     imgContainer.className = 'img'
     imgContainer.style.backgroundImage = `url('${imgSrc}')`
 
     // Setting up the title
-    let textContainer = document.createElement('div')
-    let titleDisplay = document.createElement('h1')
+    const textContainer = document.createElement('div')
+    const titleDisplay = document.createElement('h1')
     titleDisplay.innerHTML = title
-    let descDisplay = document.createElement('p')
+    const descDisplay = document.createElement('p')
     descDisplay.innerHTML = desc
     textContainer.appendChild(titleDisplay)
     textContainer.appendChild(descDisplay)
 
-    let container = document.createElement('div')
+    const container = document.createElement('div')
     container.appendChild(imgContainer)
     container.appendChild(textContainer)
 
     // Displaying on card
     this.frontView.appendChild(container)
-    // this.frontView.appendChild(textContainer)
 
     // Setting up the buttons
-    if (button1 != {} && button2 != {}) {
-      let buttonContainer = document.createElement('div')
+    if (Object.entries(button1).length && Object.entries(button2).length) {
+      const buttonContainer = document.createElement('div')
       buttonContainer.appendChild(this.createButton(button1))
       buttonContainer.appendChild(this.createButton(button2))
       this.frontView.appendChild(buttonContainer)
     }
   }
 
+  _setUpTeammateFrontView(name, title, imgSrc, links) {
+    this.frontView.className = 'teammate-card-front'
+
+    const image = document.createElement('img')
+    image.src = imgSrc
+
+    const textContainer = document.createElement('div')
+    const nameDisplay = document.createElement('h1')
+    nameDisplay.innerHTML = name
+    const titleDisplay = document.createElement('h2')
+    titleDisplay.innerHTML = title
+    textContainer.appendChild(nameDisplay)
+    textContainer.appendChild(titleDisplay)
+
+    this.frontView.appendChild(image)
+    this.frontView.appendChild(textContainer)
+  }
+
+  // addBackView(title, desc) {
+  //   this.backView.className = 'backview general-card'
+
+  //   // Added title
+  //   const titleContainer = document.createElement('h1')
+  //   titleContainer.innerHTML = title
+    
+  //   // Added desc
+  //   const descContainer = document.createElement('p')
+  //   descContainer.innerHTML = desc
+
+  //   this.backView.appendChild(titleContainer)
+  //   this.backView.appendChild(descContainer)
+  //   this.card.appendChild(this.backView)
+
+  //   this.backView.className = 'back'
+  //   this.frontView.className = 'front'
+  // }
+
+  addBackGroundColor(color) {
+    this.backView.style.backgroundColor = color
+    this.frontView.style.backgroundColor = color
+  }
+
   createButton(buttonInfo) {
     // Creating button using the info provided in a JS object
-    let buttonDisplay = document.createElement('button')
+    const buttonDisplay = document.createElement('button')
     buttonDisplay.innerHTML = buttonInfo.text
     buttonDisplay.href = buttonInfo.link
 
