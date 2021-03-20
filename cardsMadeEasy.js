@@ -4,6 +4,8 @@ const create = document.createElement;
 log('----------');
 log('Entered cardsMadeEasy js file');
 
+const logoLocation = './logo-svgs/'
+
 class Card {
   constructor(selector, id) {
     // Selecting main div
@@ -38,6 +40,14 @@ class Card {
     this.card.appendChild(this.frontView)
     this.mainDiv.append(this.card)
   }
+
+  makeProjectCard(name, desc, links) {
+    this._setUpProjectFrontView(name, desc, links)
+    this.card.className = 'project-card'
+
+    this.card.appendChild(this.frontView)
+    this.mainDiv.appendChild(this.card)
+  }
   
   _setupGeneralFrontView(title, desc, imgSrc, button1, button2) {
     // Setting up the img
@@ -64,8 +74,8 @@ class Card {
     // Setting up the buttons
     if (Object.entries(button1).length && Object.entries(button2).length) {
       const buttonContainer = document.createElement('div')
-      buttonContainer.appendChild(this.createButton(button1))
-      buttonContainer.appendChild(this.createButton(button2))
+      buttonContainer.appendChild(this._createButton(button1))
+      buttonContainer.appendChild(this._createButton(button2))
       this.frontView.appendChild(buttonContainer)
     }
   }
@@ -73,9 +83,12 @@ class Card {
   _setUpTeammateFrontView(name, title, imgSrc, links) {
     this.frontView.className = 'teammate-card-front'
 
+    // Adding image for the card
     const image = document.createElement('img')
+    image.className = 'teammate-card-profilepic'
     image.src = imgSrc
 
+    // To display name and job title
     const textContainer = document.createElement('div')
     const nameDisplay = document.createElement('h1')
     nameDisplay.innerHTML = name
@@ -83,9 +96,44 @@ class Card {
     titleDisplay.innerHTML = title
     textContainer.appendChild(nameDisplay)
     textContainer.appendChild(titleDisplay)
-
+  
     this.frontView.appendChild(image)
     this.frontView.appendChild(textContainer)
+    // Setup the links
+    this.frontView.appendChild(this._setUpLinks(links))
+  }
+
+  _setUpProjectFrontView(name, desc, links) {
+    this.frontView.className = 'project-card-front'
+    
+    const projectNameContainer = document.createElement('h1')
+    projectNameContainer.innerHTML = name
+    this.frontView.appendChild(projectNameContainer)
+
+    const linksContainer =  this._setUpLinks(links)
+    linksContainer.className = 'project-card-links'
+    this.frontView.appendChild(linksContainer)
+    
+    const projectDesc = document.createElement('p')
+    projectDesc.innerHTML = desc
+    this.frontView.appendChild(projectDesc)
+  }
+
+  _setUpLinks(links, project) {
+    const linkContainer = document.createElement('div')
+    linkContainer.className = 'link-container'
+
+    for (let l in links) {
+      const link = document.createElement('a')
+      link.href = links[l]
+      const logo = document.createElement('img')
+      logo.src = `${logoLocation}${l}.svg`
+      logo.className = 'links btn btn-primary'
+      link.appendChild(logo)
+      linkContainer.appendChild(link)
+    }
+
+    return linkContainer
   }
 
   // addBackView(title, desc) {
@@ -112,7 +160,7 @@ class Card {
     this.frontView.style.backgroundColor = color
   }
 
-  createButton(buttonInfo) {
+  _createButton(buttonInfo) {
     // Creating button using the info provided in a JS object
     const buttonDisplay = document.createElement('button')
     buttonDisplay.innerHTML = buttonInfo.text
@@ -120,7 +168,6 @@ class Card {
 
     // Adding bootstrap styling
     buttonDisplay.className = 'btn btn-primary btn-lg'
-    // buttonDisplay.role = 'button'
 
     // returning the created button
     return buttonDisplay

@@ -25,5 +25,19 @@ card1.addBackGroundColor('grey')
 //                       )
 
 const card2 = new Card('card2', 'card-id-2')
-card2.makeTeammateCard('Mills', 'Core Developer', './img/mclaren.jpeg', [])
+card2.makeTeammateCard('Mills', 'Core Developer', './img/mclaren.jpeg', 
+  {
+    'github': 'https://github.com/milindvishnoi',
+    'instagram': 'https://www.instagram.com/',
+    'linkedin': 'https://linkedin.com'
+  }
+)
 card2.addBackGroundColor('#7576b3')
+
+const card3 = new Card('card3', 'card-id-3')
+card3.makeProjectCard('Project Name', 'augdyeugfyrbnmfioshagydgeuim fgbyrn foihd bdfyeu niwe 8ehf emwd ehf eimd ehgf rjfmrugf uweirghf7 rfiwfb7 4wjfnfur hfgw jmfu rgf8enwd j', 
+{
+  'github': 'https://github.com/milindvishnoi',
+  'url': 'https://google.com'
+})
+card3.addBackGroundColor('red')
