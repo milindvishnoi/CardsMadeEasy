@@ -41,3 +41,38 @@ card3.makeProjectCard('Project Name', 'augdyeugfyrbnmfioshagydgeuim fgbyrn foihd
   'url': 'https://google.com'
 })
 card3.addBackGroundColor('red')
+
+const card4 = new CardList('card-list', 'red', 'blue')
+card4.addProjectCard('c1', 'Project Name', 'augdyeugfyrbnmfioshagydgeuim fgbyrn foihd bdfyeu niwe 8ehf emwd ehf eimd ehgf rjfmrugf uweirghf7 rfiwfb7 4wjfnfur hfgw jmfu rgf8enwd j', 
+{
+  'github': 'https://github.com/milindvishnoi',
+  'url': 'https://google.com'
+})
+card4.addTeammateCard('c2', 'Mills', 'Core Developer', './img/mclaren.jpeg', 
+  {
+    'github': 'https://github.com/milindvishnoi',
+    'instagram': 'https://www.instagram.com/',
+    'linkedin': 'https://linkedin.com'
+  }
+)
+card4.addTeammateCard('c90', 'Mills', 'Core Developer', './img/mclaren.jpeg', 
+  {
+    'github': 'https://github.com/milindvishnoi',
+    'instagram': 'https://www.instagram.com/',
+    'linkedin': 'https://linkedin.com'
+  }
+)
+card4.addGeneralCard('c3', 'Testing', 
+                      'This is a test run to see how well this general card works',
+                      './img/mclaren.jpeg',
+                      {
+                        'text': 'Check Out',
+                        'link': 'https://www.mclaren.com/'
+                      },
+                      {
+                        'text': 'Buy',
+                        'link': 'https://www.mclarenstore.com/en/home/'
+                      }
+                      )
+card4.removeCard('c90')
+

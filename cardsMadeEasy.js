@@ -9,7 +9,6 @@ const logoLocation = './logo-svgs/'
 class Card {
   constructor(selector, id) {
     // Selecting main div
-    log(selector)
     this.mainDiv = document.getElementById(selector)
 
     // Creating main card div
@@ -27,26 +26,29 @@ class Card {
 
   makeGeneralCard(title, desc, imgSrc, button1, button2) {
     this._setupGeneralFrontView(title, desc, imgSrc, button1, button2)
-    this.frontView.className = 'general-card'
+    this.card.className = 'card general-card'
 
     this.card.appendChild(this.frontView)
-    this.mainDiv.append(this.card)
+    if (this.mainDiv)
+      this.mainDiv.append(this.card)
   }
 
   makeTeammateCard(name, title, imgSrc, links) {
     this._setUpTeammateFrontView(name, title, imgSrc, links)
-    this.card.className = 'teammate-card'
+    this.card.className = 'card teammate-card'
 
     this.card.appendChild(this.frontView)
-    this.mainDiv.append(this.card)
+    if (this.mainDiv)
+      this.mainDiv.append(this.card)
   }
 
   makeProjectCard(name, desc, links) {
     this._setUpProjectFrontView(name, desc, links)
-    this.card.className = 'project-card'
+    this.card.className = 'card project-card'
 
     this.card.appendChild(this.frontView)
-    this.mainDiv.appendChild(this.card)
+    if (this.mainDiv)
+      this.mainDiv.appendChild(this.card)
   }
   
   _setupGeneralFrontView(title, desc, imgSrc, button1, button2) {
@@ -78,6 +80,8 @@ class Card {
       buttonContainer.appendChild(this._createButton(button2))
       this.frontView.appendChild(buttonContainer)
     }
+
+    this.frontView.className = 'general-card-front'
   }
 
   _setUpTeammateFrontView(name, title, imgSrc, links) {
@@ -172,4 +176,62 @@ class Card {
     // returning the created button
     return buttonDisplay
   }
+}
+
+class CardList {
+  constructor(selector, cardColor, containerColor) {
+    // Container div
+    this.mainDiv = document.getElementById(selector)
+
+    this.cardsContainer = document.createElement('div')
+    this.cardsContainer.className = 'main-container-div'
+    if (containerColor)
+      this.mainDiv.style.backgroundColor = containerColor
+
+    this.cards = []
+    this.cardColor = cardColor
+    this.mainDiv.appendChild(this.cardsContainer)
+  }
+
+  // Add General Card
+  addGeneralCard(id, title, desc, imgSrc, button1, button2) {
+    const card = new Card(null, id)
+    card.makeGeneralCard(title, desc, imgSrc, button1, button2)
+    card.addBackGroundColor(this.cardColor)
+    this.cardsContainer.appendChild(card.card)
+    this.cards.push(card)
+  }
+
+  // Add Teammate Card
+  addTeammateCard(id, name, title, imgSrc, links) {
+    const card = new Card(null, id)
+    card.makeTeammateCard(name, title, imgSrc, links)
+    card.addBackGroundColor(this.cardColor)
+    this.cardsContainer.appendChild(card.card)
+    this.cards.push(card)
+  }
+
+  // Add Project Card
+  addProjectCard(id, name, desc, links) {
+    const card = new Card(null, id)
+    card.makeProjectCard(name, desc, links)
+    card.addBackGroundColor(this.cardColor)
+    this.cardsContainer.appendChild(card.card)
+    this.cards.push(card)
+  }
+
+  // Get a specific card
+  getCard(id) {
+    return this.cards.filter((c) => c.card.id === id)[0]
+  }
+
+  // Delete a specific card
+  removeCard(id) {
+    const deleteCard = this.getCard(id)
+    log(deleteCard)
+    if (deleteCard) {
+      this.cardsContainer.removeChild(deleteCard.card)
+      this.cards = this.cards.filter((c) => c.card.id !== id)
+    }
+  }  
 }
