@@ -24,9 +24,18 @@ class Card {
     this.link = document.createElement('div')
   }
 
-  makeGeneralCard(title, desc, imgSrc, button1, button2) {
-    this._setupGeneralFrontView(title, desc, imgSrc, button1, button2)
+  makeGeneralCard(name, title, imgSrc) {
+    this._setUpGeneralFrontView(name, title, imgSrc)
     this.card.className = 'card general-card'
+
+    this.card.appendChild(this.frontView)
+    if (this.mainDiv)
+      this.mainDiv.append(this.card)
+  }
+
+  makeProductCard(title, desc, imgSrc, button1, button2) {
+    this._setupProductFrontView(title, desc, imgSrc, button1, button2)
+    this.card.className = 'card product-card'
 
     this.card.appendChild(this.frontView)
     if (this.mainDiv)
@@ -50,8 +59,25 @@ class Card {
     if (this.mainDiv)
       this.mainDiv.appendChild(this.card)
   }
+
+  _setUpGeneralFrontView(name, title, imgSrc) {
+    if (imgSrc) 
+      this.frontView.style.backgroundImage = `url('${imgSrc}')`
+    
+    const conatiner = document.createElement('div')
+    conatiner.className = 'container'
+    const nameH1 = document.createElement('h1')
+    nameH1.innerHTML = name
+    const titleP = document.createElement('p')
+    titleP.innerHTML = title
+    conatiner.appendChild(nameH1)
+    conatiner.appendChild(titleP)
+    this.frontView.appendChild(conatiner)
+
+    this.frontView.className = 'general-card-front'
+  }
   
-  _setupGeneralFrontView(title, desc, imgSrc, button1, button2) {
+  _setupProductFrontView(title, desc, imgSrc, button1, button2) {
     // Setting up the img
     const imgContainer = document.createElement('div')
     imgContainer.className = 'img'
@@ -67,7 +93,8 @@ class Card {
     textContainer.appendChild(descDisplay)
 
     const container = document.createElement('div')
-    container.appendChild(imgContainer)
+    if (imgSrc)
+      container.appendChild(imgContainer)
     container.appendChild(textContainer)
 
     // Displaying on card
@@ -81,7 +108,7 @@ class Card {
       this.frontView.appendChild(buttonContainer)
     }
 
-    this.frontView.className = 'general-card-front'
+    this.frontView.className = 'product-card-front'
   }
 
   _setUpTeammateFrontView(name, title, imgSrc, links) {
@@ -186,7 +213,7 @@ class CardList {
     this.cardsContainer = document.createElement('div')
     this.cardsContainer.className = 'main-container-div'
     if (containerColor)
-      this.mainDiv.style.backgroundColor = containerColor
+      this.cardsContainer.style.backgroundColor = containerColor
 
     this.cards = []
     this.cardColor = cardColor
@@ -194,9 +221,18 @@ class CardList {
   }
 
   // Add General Card
-  addGeneralCard(id, title, desc, imgSrc, button1, button2) {
+  addGeneralCard(id, name, title, imgSrc) {
     const card = new Card(null, id)
-    card.makeGeneralCard(title, desc, imgSrc, button1, button2)
+    card.makeGeneralCard(name, title, imgSrc)
+    card.addBackGroundColor(this.cardColor)
+    this.cardsContainer.appendChild(card.card)
+    this.cards.push(card)
+  }
+
+  // Add Product Card
+  addProductCard(id, title, desc, imgSrc, button1, button2) {
+    const card = new Card(null, id)
+    card.makeProductCard(title, desc, imgSrc, button1, button2)
     card.addBackGroundColor(this.cardColor)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)

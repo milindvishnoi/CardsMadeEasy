@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Importing Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- CSS for my library -->
+    <link rel='stylesheet' href='example.css'>
+    <link rel='stylesheet' href='cardsMadeEasy.css'>
+    
+    <!-- My Library -->
+    <script defer src='cardsMadeEasy.js'></script>
+
+    <!-- Testing my Library -->
+    <script defer src='example.js'></script>
+
+    <title>Cards Made Easy</title>
+  </head>
+  <body class="bg-secondary">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+    </nav>
+
+    <div class="container">
+      <div class="heading w-100 text-center">
+        <img src="./img/research.png">
+        <h1>Examples</h1>
+        <span>Check out some cool features of this library!</span>
+      </div>
+
+      <!-- Displaying all the features -->
+      <div class="feature">
+        <h1>Feature 1: Individual Cards</h1>
+        <p>You can create individual cards on it's own. You can choose to add images or use the background color (which you can choose).</p>
+        <div class="d-flex">
+          <div id='card1'></div>
+          <div id='card-no-img'></div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <h1>Feature 2: Multiple Designs</h1>
+        <p>Depending on the use you can create different cards that have different designs.</p>
+        <div class="d-flex justify-content-between">
+          <div>
+            <h2>General Card</h2>
+            <div id='card5'></div>
+          </div>
+
+          <div>
+            <h2>Product Card</h2>
+            <div id='card2'></div>
+          </div>
+
+          <div>
+            <h2>Teammate Card</h2>
+            <div id='card3'></div>
+          </div>
+
+          <div>
+            <h2>Project Card</h2>
+            <div id='card4'></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <h1>Feature 3: Multiple Cards</h1>
+        <p>You can create multiple cards in a big container. The DOM will adjust automatically!</p>
+        <div id='card-list'></div>
+      </div>
+
+
+    </div>
+  </body>
+</html>
