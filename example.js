@@ -83,3 +83,25 @@ cardList.addProductCard('c3', 'Testing',
                       }
                       )
 
+// Feature 4
+const cardsLst = new CardList('array-of-cards', 'yellow', '#62678a')
+cardsLst.addGeneralCard("Random Card", "Random Card", "Display")
+
+const addCardForm = document.getElementById('showAddFeature')
+addCardForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = document.getElementById('append-name').value
+    const title = document.getElementById('append-title').value
+
+    cardsLst.addGeneralCard(name, name, title)
+})
+
+// Feature 5
+const deleteCardForm = document.getElementById('showDeleteFeature')
+deleteCardForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = document.getElementById('delete-card').value
+
+    cardsLst.removeCard(name)
+})
+

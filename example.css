@@ -3,22 +3,24 @@ h1 {
 }
 
 .heading {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   margin-top: 30px;
 }
 
 .heading span {
   font-size: 16px;
   font-style: italic;
+  opacity: .9;
 }
 
 .heading h1 {
   margin-bottom: 2px;
+  font-size: 50px;
 }
 
 .heading img {
   margin: 20px;
-  width: 80px;
+  width: 200px;
 }
 
 .feature {
