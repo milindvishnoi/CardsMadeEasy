@@ -1,0 +1,19 @@
+{
+  "name": "cards_made_easy",
+  "version": "1.0.0",
+  "description": "JS Library that helps developers organize and display data in card form",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-winter-2021/js-library-vishnoim.git"
+  },
+  "author": "milindvishnoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc309-winter-2021/js-library-vishnoim/issues"
+  },
+  "homepage": "https://github.com/csc309-winter-2021/js-library-vishnoim#readme"
+}
