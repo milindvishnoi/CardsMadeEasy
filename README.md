@@ -1,1 +1,1 @@
-# js-library-vishnoim
+# cardsMadeEasy
