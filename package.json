@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/csc309-winter-2021/js-library-vishnoim/issues"
   },
-  "homepage": "https://github.com/csc309-winter-2021/js-library-vishnoim#readme"
+  "homepage": "https://github.com/csc309-winter-2021/js-library-vishnoim#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
