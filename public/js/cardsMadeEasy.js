@@ -4,7 +4,7 @@ const create = document.createElement;
 log('----------');
 log('Entered cardsMadeEasy js file');
 
-const logoLocation = './logo-svgs/'
+const logoLocation = '../logo-svgs/'
 
 class Card {
   constructor(selector, id) {
