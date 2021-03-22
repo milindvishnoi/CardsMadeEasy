@@ -4,13 +4,11 @@ log('Express server')
 
 const express = require('express')
 const app = express();
+app.use(express.static(__dirname))
 
 const path = require('path');
 
 app.get('/', (req, res) => {
-	// sending a string
-	//res.send('This should be the root route!')
-
 	//sending some HTML
 	res.sendFile(path.join(__dirname, './example.html'))
 })
