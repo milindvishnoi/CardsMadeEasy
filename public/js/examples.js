@@ -105,3 +105,11 @@ deleteCardForm.addEventListener('submit', (e) => {
     cardsLst.removeCard(name)
 })
 
+// Feature 6
+const editColorForm = document.getElementById('editColor')
+editColorForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = document.getElementById('edit-color-name').value
+
+    cardsLst.getCard(name).addBackGroundColor('blue')
+})
