@@ -18,7 +18,7 @@ cardWithoutImage.makeProductCard('McLaren 570s',
                         'link': 'https://www.mclarenstore.com/en/home/'
                       }
                       )
-cardWithoutImage.addBackGroundColor('grey')
+cardWithoutImage.changeBackGroundColor('grey')
 
 // Feature 2
 const card5 = new Card('card5', 'card-id-5')
@@ -36,7 +36,7 @@ productCard.makeProductCard('McLaren 570s',
                         'link': 'https://www.mclarenstore.com/en/home/'
                       }
                       )
-productCard.addBackGroundColor('grey')
+productCard.changeBackGroundColor('grey')
 
 const card2 = new Card('card3', 'card-id-3')
 card2.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg', 
@@ -46,32 +46,32 @@ card2.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg',
     'linkedin': 'https://linkedin.com'
   }
 )
-card2.addBackGroundColor('#7576b3')
+card2.changeBackGroundColor('#7576b3')
 
 const card3 = new Card('card4', 'card-id-4')
-card3.makeProjectCard('Project Name', 'augdyeugfyrbnmfioshagydgeuim fgbyrn foihd bdfyeu niwe 8ehf emwd ehf eimd ehgf rjfmrugf uweirghf7 rfiwfb7 4wjfnfur hfgw jmfu rgf8enwd j', 
+card3.makeProjectCard('Material Math', 'Practice Math problems in a fun, beautiful, material experience!', 
 {
-  'github': 'https://github.com/milindvishnoi',
-  'url': 'https://google.com'
+  'github': 'https://github.com/grey-software/Material-Math',
+  'url': 'https://material-math.grey.software/#/'
 })
-card3.addBackGroundColor('#8a6289')
+card3.changeBackGroundColor('#8a6289')
 
 // Feature 3
 const cardList = new CardList('card-list', '#638e94', '#62678a')
-cardList.addProjectCard('c1', 'Project Name', 'augdyeugfyrbnmfioshagydgeuim fgbyrn foihd bdfyeu niwe 8ehf emwd ehf eimd ehgf rjfmrugf uweirghf7 rfiwfb7 4wjfnfur hfgw jmfu rgf8enwd j', 
+cardList.addProjectCard('c1', 'Material Math', 'Practice Math problems in a fun, beautiful, material experience!', 
 {
-  'github': 'https://github.com/milindvishnoi',
-  'url': 'https://google.com'
+  'github': 'https://github.com/grey-software/Material-Math',
+  'url': 'https://material-math.grey.software/#/'
 })
-cardList.addTeammateCard('c2', 'Mills', 'Core Developer', './img/mclaren.jpeg', 
+cardList.addTeammateCard('c2', 'Mills', 'Core Developer', './img/developer.jpeg', 
   {
     'github': 'https://github.com/milindvishnoi',
     'instagram': 'https://www.instagram.com/',
     'linkedin': 'https://linkedin.com'
   }
 )
-cardList.addProductCard('c3', 'Testing', 
-                      'This is a test run to see how well this general card works',
+cardList.addProductCard('c3', 'McLaren 570s', 
+                      'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
                       './img/mclaren.jpeg',
                       {
                         'text': 'Check Out',
@@ -110,6 +110,7 @@ const editColorForm = document.getElementById('editColor')
 editColorForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const name = document.getElementById('edit-color-name').value
+    const bgcolor = document.getElementById('bgcard-color').value    
 
-    cardsLst.getCard(name).addBackGroundColor('blue')
+    cardsLst.getCard(name).changeBackGroundColor(bgcolor)
 })

@@ -20,8 +20,7 @@ class Card {
     this.backView = document.createElement('div')
     this.flip = false
     this.zoom = false
-    this.about = document.createElement('div')
-    this.link = document.createElement('div')
+    this.color = null
   }
 
   makeGeneralCard(name, title, imgSrc) {
@@ -58,6 +57,12 @@ class Card {
     this.card.appendChild(this.frontView)
     if (this.mainDiv)
       this.mainDiv.appendChild(this.card)
+  }
+
+  changeBackGroundColor(color) {
+    this.color = color
+    this.backView.style.backgroundColor = color
+    this.frontView.style.backgroundColor = color
   }
 
   _setUpGeneralFrontView(name, title, imgSrc) {
@@ -186,11 +191,6 @@ class Card {
   //   this.frontView.className = 'front'
   // }
 
-  addBackGroundColor(color) {
-    this.backView.style.backgroundColor = color
-    this.frontView.style.backgroundColor = color
-  }
-
   _createButton(buttonInfo) {
     // Creating button using the info provided in a JS object
     const buttonDisplay = document.createElement('button')
@@ -224,7 +224,7 @@ class CardList {
   addGeneralCard(id, name, title, imgSrc) {
     const card = new Card(null, id)
     card.makeGeneralCard(name, title, imgSrc)
-    card.addBackGroundColor(this.cardColor)
+    card.changeBackGroundColor(this.cardColor)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
@@ -233,7 +233,7 @@ class CardList {
   addProductCard(id, title, desc, imgSrc, button1, button2) {
     const card = new Card(null, id)
     card.makeProductCard(title, desc, imgSrc, button1, button2)
-    card.addBackGroundColor(this.cardColor)
+    card.changeBackGroundColor(this.cardColor)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
@@ -242,7 +242,7 @@ class CardList {
   addTeammateCard(id, name, title, imgSrc, links) {
     const card = new Card(null, id)
     card.makeTeammateCard(name, title, imgSrc, links)
-    card.addBackGroundColor(this.cardColor)
+    card.changeBackGroundColor(this.cardColor)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
@@ -251,7 +251,7 @@ class CardList {
   addProjectCard(id, name, desc, links) {
     const card = new Card(null, id)
     card.makeProjectCard(name, desc, links)
-    card.addBackGroundColor(this.cardColor)
+    card.changeBackGroundColor(this.cardColor)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
