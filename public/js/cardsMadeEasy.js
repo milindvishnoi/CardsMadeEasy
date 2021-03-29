@@ -65,6 +65,16 @@ class Card {
     this.frontView.style.backgroundColor = color
   }
 
+  addZoomFeature() {
+    this.zoom = true
+    this.card.onmouseenter = () => {
+      this.card.classList.add('zoom')
+    }
+    this.card.onmouseleave = () => {
+      this.card.classList.remove('zoom')
+    }
+  }
+
   _setUpGeneralFrontView(name, title, imgSrc) {
     if (imgSrc) 
       this.frontView.style.backgroundImage = `url('${imgSrc}')`

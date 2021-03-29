@@ -114,3 +114,23 @@ editColorForm.addEventListener('submit', (e) => {
 
     cardsLst.getCard(name).changeBackGroundColor(bgcolor)
 })
+
+// Feature 7
+const zoomCard = new Card('zoom-card', 'zoom-card-1')
+zoomCard.makeGeneralCard('Jeff', 'Model', './img/model.jpg')
+zoomCard.addZoomFeature()
+const productZoomCard = new Card('product-zoom', 'zoom-card-2')
+productZoomCard.makeProductCard('McLaren 570s', 
+                      'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
+                      './img/mclaren.jpeg',
+                      {
+                        'text': 'Check Out',
+                        'link': 'https://www.mclaren.com/'
+                      },
+                      {
+                        'text': 'Buy',
+                        'link': 'https://www.mclarenstore.com/en/home/'
+                      }
+                      )
+productZoomCard.changeBackGroundColor('grey')
+productZoomCard.addZoomFeature()
