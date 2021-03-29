@@ -18,6 +18,7 @@ class Card {
     // Basic attributes for a card
     this.frontView = document.createElement('div')
     this.backView = document.createElement('div')
+    this.flipContainer = null
     this.flip = false
     this.zoom = false
     this.color = null
@@ -65,7 +66,7 @@ class Card {
     this.frontView.style.backgroundColor = color
   }
 
-  addZoomFeature() {
+  addZoom() {
     this.zoom = true
     this.card.onmouseenter = () => {
       this.card.classList.add('zoom')
@@ -89,7 +90,9 @@ class Card {
     conatiner.appendChild(titleP)
     this.frontView.appendChild(conatiner)
 
+    this.flipContainer = this.frontView
     this.frontView.className = 'general-card-front'
+    this.flipContainer.classList.add('pointer')
   }
   
   _setupProductFrontView(title, desc, imgSrc, button1, button2) {
@@ -123,6 +126,8 @@ class Card {
       this.frontView.appendChild(buttonContainer)
     }
 
+    this.flipContainer = container
+    this.flipContainer.className = 'pointer'
     this.frontView.className = 'product-card-front'
   }
 
@@ -142,9 +147,16 @@ class Card {
     titleDisplay.innerHTML = title
     textContainer.appendChild(nameDisplay)
     textContainer.appendChild(titleDisplay)
-  
-    this.frontView.appendChild(image)
-    this.frontView.appendChild(textContainer)
+
+    const flipContain = document.createElement('div')
+    flipContain.className = 'd-flex flex-column justify-content-between align-items-center pointer'
+    flipContain.style = 'min-height: 250px; width: 100%;'
+    flipContain.appendChild(image)
+    flipContain.appendChild(textContainer)
+
+    this.frontView.appendChild(flipContain)
+    this.flipContainer = flipContain
+
     // Setup the links
     this.frontView.appendChild(this._setUpLinks(links))
   }
@@ -163,6 +175,10 @@ class Card {
     const projectDesc = document.createElement('p')
     projectDesc.innerHTML = desc
     this.frontView.appendChild(projectDesc)
+
+    this.flipContainer = projectDesc
+    this.flipContainer.className = 'pointer'
+    projectDesc.style = 'height: 100%;'
   }
 
   _setUpLinks(links, project) {
@@ -182,24 +198,35 @@ class Card {
     return linkContainer
   }
 
-  // addBackView(title, desc) {
-  //   this.backView.className = 'backview general-card'
+  addFlip(title, desc) {
+    this._setUpBackView(title, desc)
+    this.flipContainer.onclick = () => this._flip()
+    this.backView.onclick = () => this._flip()
+  }
 
-  //   // Added title
-  //   const titleContainer = document.createElement('h1')
-  //   titleContainer.innerHTML = title
+  _setUpBackView(title, desc) {
+    this.backView.className = 'backview'
+
+    // Added title
+    const titleContainer = document.createElement('h1')
+    titleContainer.innerHTML = title
     
-  //   // Added desc
-  //   const descContainer = document.createElement('p')
-  //   descContainer.innerHTML = desc
+    // Added desc
+    const descContainer = document.createElement('p')
+    descContainer.innerHTML = desc
 
-  //   this.backView.appendChild(titleContainer)
-  //   this.backView.appendChild(descContainer)
-  //   this.card.appendChild(this.backView)
+    this.backView.appendChild(titleContainer)
+    this.backView.appendChild(descContainer)
 
-  //   this.backView.className = 'back'
-  //   this.frontView.className = 'front'
-  // }
+    this.backView.className = 'backview pointer'
+  }
+
+  _flip() {
+    if (this.card.firstChild === this.frontView)
+      this.card.replaceChild(this.backView, this.frontView)
+    else
+      this.card.replaceChild(this.frontView, this.backView)
+  }
 
   _createButton(buttonInfo) {
     // Creating button using the info provided in a JS object
@@ -279,5 +306,5 @@ class CardList {
       this.cardsContainer.removeChild(deleteCard.card)
       this.cards = this.cards.filter((c) => c.card.id !== id)
     }
-  }  
+  }
 }

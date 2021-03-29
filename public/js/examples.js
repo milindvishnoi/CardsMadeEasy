@@ -118,8 +118,20 @@ editColorForm.addEventListener('submit', (e) => {
 // Feature 7
 const zoomCard = new Card('zoom-card', 'zoom-card-1')
 zoomCard.makeGeneralCard('Jeff', 'Model', './img/model.jpg')
-zoomCard.addZoomFeature()
-const productZoomCard = new Card('product-zoom', 'zoom-card-2')
+zoomCard.addZoom()
+const teamZoom = new Card('team-zoom', 'zoom-card-2')
+teamZoom.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg', 
+  {
+    'github': 'https://github.com/milindvishnoi',
+    'instagram': 'https://www.instagram.com/',
+    'linkedin': 'https://linkedin.com'
+  }
+)
+teamZoom.changeBackGroundColor('#3ab096')
+teamZoom.addZoom()
+
+// Feature 8
+const productZoomCard = new Card('product-flip', 'flip-card')
 productZoomCard.makeProductCard('McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
                       './img/mclaren.jpeg',
@@ -130,7 +142,6 @@ productZoomCard.makeProductCard('McLaren 570s',
                       {
                         'text': 'Buy',
                         'link': 'https://www.mclarenstore.com/en/home/'
-                      }
-                      )
+                      })
 productZoomCard.changeBackGroundColor('grey')
-productZoomCard.addZoomFeature()
+productZoomCard.addFlip('More Details', 'It’s the ultimate sports car experience. Completely driver-centric and performance oriented, the 570S Coupé is equally at home on the track as it is on the open road. With the lightest weight in its class and the highest power to weight ratio, it delivers super car punch and thrills that would shame many more expensive rivals.')
