@@ -86,6 +86,7 @@ cardList.addProductCard('c3', 'McLaren 570s',
 // Feature 4
 const cardsLst = new CardList('array-of-cards', 'yellow', '#62678a')
 cardsLst.addGeneralCard("Random Card", "Random Card", "Display")
+cardsLst.addZoomToAll()
 
 const addCardForm = document.getElementById('showAddFeature')
 addCardForm.addEventListener('submit', (e) => {
@@ -114,6 +115,25 @@ editColorForm.addEventListener('submit', (e) => {
 
     cardsLst.getCard(name).changeBackGroundColor(bgcolor)
 })
+
+const editTitleColorForm = document.getElementById('editTitleColor')
+editTitleColorForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = document.getElementById('edit-title-color-name').value
+    const color = document.getElementById('title-color').value    
+
+    cardsLst.getCard(name).changeTitleColor(color)
+})
+
+const editSubtitleColorForm = document.getElementById('editSubtitleColor')
+editSubtitleColorForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const name = document.getElementById('edit-subtitle-name').value
+    const color = document.getElementById('subtitle-color').value    
+
+    cardsLst.getCard(name).changeSubtitleColor(color)
+})
+
 
 // Feature 7
 const zoomCard = new Card('zoom-card', 'zoom-card-1')

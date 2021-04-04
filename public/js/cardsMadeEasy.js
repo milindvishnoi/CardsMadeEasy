@@ -1,6 +1,5 @@
 "use strict";
 const log = console.log;
-const create = document.createElement;
 log('----------');
 log('Entered cardsMadeEasy js file');
 
@@ -24,8 +23,9 @@ class Card {
     this.color = null
   }
 
-  makeGeneralCard(name, title, imgSrc) {
-    this._setUpGeneralFrontView(name, title, imgSrc)
+  /* Creating all kinds of cards */
+  makeGeneralCard(title, subtitle, imgSrc) {
+    this._setUpGeneralFrontView(title, subtitle, imgSrc)
     this.card.className = 'card general-card'
 
     this.card.appendChild(this.frontView)
@@ -42,8 +42,8 @@ class Card {
       this.mainDiv.append(this.card)
   }
 
-  makeTeammateCard(name, title, imgSrc, links) {
-    this._setUpTeammateFrontView(name, title, imgSrc, links)
+  makeTeammateCard(title, subtitle, imgSrc, links) {
+    this._setUpTeammateFrontView(title, subtitle, imgSrc, links)
     this.card.className = 'card teammate-card'
 
     this.card.appendChild(this.frontView)
@@ -51,8 +51,8 @@ class Card {
       this.mainDiv.append(this.card)
   }
 
-  makeProjectCard(name, desc, links) {
-    this._setUpProjectFrontView(name, desc, links)
+  makeProjectCard(title, desc, links) {
+    this._setUpProjectFrontView(title, desc, links)
     this.card.className = 'card project-card'
 
     this.card.appendChild(this.frontView)
@@ -60,12 +60,7 @@ class Card {
       this.mainDiv.appendChild(this.card)
   }
 
-  changeBackGroundColor(color) {
-    this.color = color
-    this.backView.style.backgroundColor = color
-    this.frontView.style.backgroundColor = color
-  }
-
+  /* Additional features */
   addZoom() {
     this.zoom = true
     this.card.onmouseenter = () => {
@@ -76,18 +71,54 @@ class Card {
     }
   }
 
-  _setUpGeneralFrontView(name, title, imgSrc) {
+  addFlip(title, desc) {
+    this._setUpBackView(title, desc)
+    this.flipContainer.onclick = () => this._flip()
+    this.backView.onclick = () => this._flip()
+  }
+
+  /* Customization options */
+  changeBackGroundColor(color) {
+    this.color = color
+    this.backView.style.backgroundColor = color
+    this.frontView.style.backgroundColor = color
+  }
+
+  changeTitleColor(color) {
+    this.frontView.getElementsByClassName('title')[0].style.color = color
+  }
+
+  changeSubtitleColor(color) {
+    this.frontView.getElementsByClassName('subtitle')[0].style.color = color
+  }
+
+  changeDescriptionColor(color) {
+    this.frontView.getElementsByClassName('desc')[0].style.color = color
+  }
+
+  changeBackTitleColor(color) {
+    this.backView.getElementsByClassName('title')[0].style.color = color
+  }
+
+  changeBackDescriptionColor(color) {
+    this.backView.getElementsByClassName('desc')[0].style.color = color
+  }
+
+  /* Private methods */
+  _setUpGeneralFrontView(title, subtitle, imgSrc) {
     if (imgSrc) 
       this.frontView.style.backgroundImage = `url('${imgSrc}')`
     
     const conatiner = document.createElement('div')
     conatiner.className = 'container'
-    const nameH1 = document.createElement('h1')
-    nameH1.innerHTML = name
-    const titleP = document.createElement('p')
-    titleP.innerHTML = title
-    conatiner.appendChild(nameH1)
-    conatiner.appendChild(titleP)
+    const titleH1 = document.createElement('h1')
+    titleH1.innerHTML = title
+    titleH1.classList.add('title')
+    const subtitleP = document.createElement('p')
+    subtitleP.innerHTML = subtitle
+    subtitleP.classList.add('subtitle')
+    conatiner.appendChild(titleH1)
+    conatiner.appendChild(subtitleP)
     this.frontView.appendChild(conatiner)
 
     this.flipContainer = this.frontView
@@ -105,8 +136,10 @@ class Card {
     const textContainer = document.createElement('div')
     const titleDisplay = document.createElement('h1')
     titleDisplay.innerHTML = title
+    titleDisplay.classList.add('title')
     const descDisplay = document.createElement('p')
     descDisplay.innerHTML = desc
+    descDisplay.classList.add('desc')
     textContainer.appendChild(titleDisplay)
     textContainer.appendChild(descDisplay)
 
@@ -131,7 +164,7 @@ class Card {
     this.frontView.className = 'product-card-front'
   }
 
-  _setUpTeammateFrontView(name, title, imgSrc, links) {
+  _setUpTeammateFrontView(title, subtitle, imgSrc, links) {
     this.frontView.className = 'teammate-card-front'
 
     // Adding image for the card
@@ -139,14 +172,16 @@ class Card {
     image.className = 'teammate-card-profilepic'
     image.src = imgSrc
 
-    // To display name and job title
+    // To display title and subtitle
     const textContainer = document.createElement('div')
-    const nameDisplay = document.createElement('h1')
-    nameDisplay.innerHTML = name
-    const titleDisplay = document.createElement('h2')
+    const titleDisplay = document.createElement('h1')
     titleDisplay.innerHTML = title
-    textContainer.appendChild(nameDisplay)
+    titleDisplay.classList.add('title')
+    const subtitleDisplay = document.createElement('h2')
+    subtitleDisplay.innerHTML = subtitle
+    subtitleDisplay.classList.add('subtitle')
     textContainer.appendChild(titleDisplay)
+    textContainer.appendChild(subtitleDisplay)
 
     const flipContain = document.createElement('div')
     flipContain.className = 'd-flex flex-column justify-content-between align-items-center pointer'
@@ -161,11 +196,12 @@ class Card {
     this.frontView.appendChild(this._setUpLinks(links))
   }
 
-  _setUpProjectFrontView(name, desc, links) {
+  _setUpProjectFrontView(title, desc, links) {
     this.frontView.className = 'project-card-front'
     
     const projectNameContainer = document.createElement('h1')
-    projectNameContainer.innerHTML = name
+    projectNameContainer.innerHTML = title
+    projectNameContainer.classList.add('title')
     this.frontView.appendChild(projectNameContainer)
 
     const linksContainer =  this._setUpLinks(links)
@@ -174,6 +210,7 @@ class Card {
     
     const projectDesc = document.createElement('p')
     projectDesc.innerHTML = desc
+    projectDesc.classList.add('title')
     this.frontView.appendChild(projectDesc)
 
     this.flipContainer = projectDesc
@@ -181,7 +218,7 @@ class Card {
     projectDesc.style = 'height: 100%;'
   }
 
-  _setUpLinks(links, project) {
+  _setUpLinks(links) {
     const linkContainer = document.createElement('div')
     linkContainer.className = 'link-container'
 
@@ -198,22 +235,18 @@ class Card {
     return linkContainer
   }
 
-  addFlip(title, desc) {
-    this._setUpBackView(title, desc)
-    this.flipContainer.onclick = () => this._flip()
-    this.backView.onclick = () => this._flip()
-  }
-
   _setUpBackView(title, desc) {
     this.backView.className = 'backview'
 
     // Added title
     const titleContainer = document.createElement('h1')
     titleContainer.innerHTML = title
+    titleContainer.classList.add('title')
     
     // Added desc
     const descContainer = document.createElement('p')
     descContainer.innerHTML = desc
+    descContainer.classList.add('desc')
 
     this.backView.appendChild(titleContainer)
     this.backView.appendChild(descContainer)
@@ -254,14 +287,16 @@ class CardList {
 
     this.cards = []
     this.cardColor = cardColor
+    this.zoom = false
     this.mainDiv.appendChild(this.cardsContainer)
   }
 
   // Add General Card
-  addGeneralCard(id, name, title, imgSrc) {
+  addGeneralCard(id, title, subtitle, imgSrc) {
     const card = new Card(null, id)
-    card.makeGeneralCard(name, title, imgSrc)
+    card.makeGeneralCard(title, subtitle, imgSrc)
     card.changeBackGroundColor(this.cardColor)
+    this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
@@ -271,24 +306,27 @@ class CardList {
     const card = new Card(null, id)
     card.makeProductCard(title, desc, imgSrc, button1, button2)
     card.changeBackGroundColor(this.cardColor)
+    this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
 
   // Add Teammate Card
-  addTeammateCard(id, name, title, imgSrc, links) {
+  addTeammateCard(id, title, subtitle, imgSrc, links) {
     const card = new Card(null, id)
-    card.makeTeammateCard(name, title, imgSrc, links)
+    card.makeTeammateCard(title, subtitle, imgSrc, links)
     card.changeBackGroundColor(this.cardColor)
+    this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
 
   // Add Project Card
-  addProjectCard(id, name, desc, links) {
+  addProjectCard(id, title, desc, links) {
     const card = new Card(null, id)
-    card.makeProjectCard(name, desc, links)
+    card.makeProjectCard(title, desc, links)
     card.changeBackGroundColor(this.cardColor)
+    this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
   }
@@ -306,5 +344,17 @@ class CardList {
       this.cardsContainer.removeChild(deleteCard.card)
       this.cards = this.cards.filter((c) => c.card.id !== id)
     }
+  }
+
+  // Add zoom feature to all cards and the cards that are made in future
+  addZoomToAll() {
+    this.zoom = true
+    this.cards.forEach((card) => card.addZoom())
+  }
+
+  /* Hidden Functions */
+  _keepAddingZoom(card) {
+    if (this.zoom)
+      card.addZoom(card)
   }
 }
