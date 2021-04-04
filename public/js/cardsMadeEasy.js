@@ -73,12 +73,13 @@ class Card {
 
   addFlip(title, desc) {
     this._setUpBackView(title, desc)
+    this.flipContainer.classList.add('pointer')
     this.flipContainer.onclick = () => this._flip()
     this.backView.onclick = () => this._flip()
   }
 
   /* Customization options */
-  changeBackGroundColor(color) {
+  changeBackgroundColor(color) {
     this.color = color
     this.backView.style.backgroundColor = color
     this.frontView.style.backgroundColor = color
@@ -123,7 +124,6 @@ class Card {
 
     this.flipContainer = this.frontView
     this.frontView.className = 'general-card-front'
-    this.flipContainer.classList.add('pointer')
   }
   
   _setupProductFrontView(title, desc, imgSrc, button1, button2) {
@@ -160,7 +160,6 @@ class Card {
     }
 
     this.flipContainer = container
-    this.flipContainer.className = 'pointer'
     this.frontView.className = 'product-card-front'
   }
 
@@ -184,7 +183,7 @@ class Card {
     textContainer.appendChild(subtitleDisplay)
 
     const flipContain = document.createElement('div')
-    flipContain.className = 'd-flex flex-column justify-content-between align-items-center pointer'
+    flipContain.className = 'd-flex flex-column justify-content-between align-items-center'
     flipContain.style = 'min-height: 250px; width: 100%;'
     flipContain.appendChild(image)
     flipContain.appendChild(textContainer)
@@ -214,7 +213,6 @@ class Card {
     this.frontView.appendChild(projectDesc)
 
     this.flipContainer = projectDesc
-    this.flipContainer.className = 'pointer'
     projectDesc.style = 'height: 100%;'
   }
 
@@ -295,7 +293,7 @@ class CardList {
   addGeneralCard(id, title, subtitle, imgSrc) {
     const card = new Card(null, id)
     card.makeGeneralCard(title, subtitle, imgSrc)
-    card.changeBackGroundColor(this.cardColor)
+    card.changeBackgroundColor(this.cardColor)
     this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
@@ -305,7 +303,7 @@ class CardList {
   addProductCard(id, title, desc, imgSrc, button1, button2) {
     const card = new Card(null, id)
     card.makeProductCard(title, desc, imgSrc, button1, button2)
-    card.changeBackGroundColor(this.cardColor)
+    card.changeBackgroundColor(this.cardColor)
     this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
@@ -315,7 +313,7 @@ class CardList {
   addTeammateCard(id, title, subtitle, imgSrc, links) {
     const card = new Card(null, id)
     card.makeTeammateCard(title, subtitle, imgSrc, links)
-    card.changeBackGroundColor(this.cardColor)
+    card.changeBackgroundColor(this.cardColor)
     this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)
@@ -325,7 +323,7 @@ class CardList {
   addProjectCard(id, title, desc, links) {
     const card = new Card(null, id)
     card.makeProjectCard(title, desc, links)
-    card.changeBackGroundColor(this.cardColor)
+    card.changeBackgroundColor(this.cardColor)
     this._keepAddingZoom(card)
     this.cardsContainer.appendChild(card.card)
     this.cards.push(card)

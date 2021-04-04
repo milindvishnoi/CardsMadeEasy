@@ -18,7 +18,7 @@ cardWithoutImage.makeProductCard('McLaren 570s',
                         'link': 'https://www.mclarenstore.com/en/home/'
                       }
                       )
-cardWithoutImage.changeBackGroundColor('grey')
+cardWithoutImage.changeBackgroundColor('grey')
 
 // Feature 2
 const card5 = new Card('card5', 'card-id-5')
@@ -36,7 +36,7 @@ productCard.makeProductCard('McLaren 570s',
                         'link': 'https://www.mclarenstore.com/en/home/'
                       }
                       )
-productCard.changeBackGroundColor('grey')
+productCard.changeBackgroundColor('grey')
 
 const card2 = new Card('card3', 'card-id-3')
 card2.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg', 
@@ -46,7 +46,7 @@ card2.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg',
     'linkedin': 'https://linkedin.com'
   }
 )
-card2.changeBackGroundColor('#7576b3')
+card2.changeBackgroundColor('#7576b3')
 
 const card3 = new Card('card4', 'card-id-4')
 card3.makeProjectCard('Material Math', 'Practice Math problems in a fun, beautiful, material experience!', 
@@ -54,7 +54,7 @@ card3.makeProjectCard('Material Math', 'Practice Math problems in a fun, beautif
   'github': 'https://github.com/grey-software/Material-Math',
   'url': 'https://material-math.grey.software/#/'
 })
-card3.changeBackGroundColor('#8a6289')
+card3.changeBackgroundColor('#8a6289')
 
 // Feature 3
 const cardList = new CardList('card-list', '#638e94', '#62678a')
@@ -113,7 +113,7 @@ editColorForm.addEventListener('submit', (e) => {
     const name = document.getElementById('edit-color-name').value
     const bgcolor = document.getElementById('bgcard-color').value    
 
-    cardsLst.getCard(name).changeBackGroundColor(bgcolor)
+    cardsLst.getCard(name).changeBackgroundColor(bgcolor)
 })
 
 const editTitleColorForm = document.getElementById('editTitleColor')
@@ -147,7 +147,7 @@ teamZoom.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg',
     'linkedin': 'https://linkedin.com'
   }
 )
-teamZoom.changeBackGroundColor('#3ab096')
+teamZoom.changeBackgroundColor('#3ab096')
 teamZoom.addZoom()
 
 // Feature 8
@@ -163,5 +163,5 @@ productZoomCard.makeProductCard('McLaren 570s',
                         'text': 'Buy',
                         'link': 'https://www.mclarenstore.com/en/home/'
                       })
-productZoomCard.changeBackGroundColor('grey')
+productZoomCard.changeBackgroundColor('grey')
 productZoomCard.addFlip('More Details', 'It’s the ultimate sports car experience. Completely driver-centric and performance oriented, the 570S Coupé is equally at home on the track as it is on the open road. With the lightest weight in its class and the highest power to weight ratio, it delivers super car punch and thrills that would shame many more expensive rivals.')
