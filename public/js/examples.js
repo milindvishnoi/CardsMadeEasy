@@ -4,7 +4,7 @@ log('Entered example.js')
 
 // Feature 1
 const card1 = new Card('card1', 'card-id-1')
-card1.makeGeneralCard('Jeff', 'Model', './img/model.jpg')
+card1.makeGeneralCard('Jeff', 'Model', './img/jeff.jpg')
 const cardWithoutImage = new Card('card-no-img', 'card-no-img')
 cardWithoutImage.makeProductCard('McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
@@ -22,7 +22,7 @@ cardWithoutImage.changeBackgroundColor('grey')
 
 // Feature 2
 const card5 = new Card('card5', 'card-id-5')
-card5.makeGeneralCard('Jeff', 'Model', './img/model.jpg')
+card5.makeGeneralCard('Jeff', 'Model', './img/jeff.jpg')
 const productCard = new Card('card2', 'card-id-2')
 productCard.makeProductCard('McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
@@ -137,7 +137,7 @@ editSubtitleColorForm.addEventListener('submit', (e) => {
 
 // Feature 7
 const zoomCard = new Card('zoom-card', 'zoom-card-1')
-zoomCard.makeGeneralCard('Jeff', 'Model', './img/model.jpg')
+zoomCard.makeGeneralCard('Jeff', 'Model', './img/jeff.jpg')
 zoomCard.addZoom()
 const teamZoom = new Card('team-zoom', 'zoom-card-2')
 teamZoom.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg', 
@@ -165,3 +165,15 @@ productZoomCard.makeProductCard('McLaren 570s',
                       })
 productZoomCard.changeBackgroundColor('grey')
 productZoomCard.addFlip('More Details', 'It’s the ultimate sports car experience. Completely driver-centric and performance oriented, the 570S Coupé is equally at home on the track as it is on the open road. With the lightest weight in its class and the highest power to weight ratio, it delivers super car punch and thrills that would shame many more expensive rivals.')
+
+// Feature 9
+const carouserCards = new CardCarouser('carouser', 'yellow', '#62678a')
+carouserCards.addGeneralCard('Barney', 'Barney', 'Philathropist', './img/barney.jpeg')
+carouserCards.addGeneralCard('Ted', 'Ted', 'Architect', './img/ted.jpeg')
+carouserCards.getCard('Ted').changeSubtitleColor('white')
+carouserCards.getCard('Ted').changeTitleColor('white')
+carouserCards.addGeneralCard('Robin', 'Robin', 'Journalist', './img/robin.jpeg')
+carouserCards.addGeneralCard('Marshal', 'Marshal', 'Lawyer', './img/marshal.jpeg')
+carouserCards.getCard('Marshal').changeSubtitleColor('white')
+carouserCards.getCard('Marshal').changeTitleColor('white')
+carouserCards.addGeneralCard('Lily', 'Lily', 'Teacher', './img/lily.jpeg')

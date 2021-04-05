@@ -356,3 +356,60 @@ class CardList {
       card.addZoom(card)
   }
 }
+
+class CardCarouser extends CardList {
+  constructor(selector, cardColor, containerColor) {
+    super(selector, cardColor, containerColor)
+    this.mainDiv.classList.add('carouser-container')
+
+    this.cardsContainer.className = 'carouser-container-inner'
+
+    this.leftButton = this._setUpLeftButton()
+    this.rightButton = this._setUpRightButton()
+
+    this.imageIndex = 1
+    this.translateX = 0
+
+    this.mainDiv.appendChild(this.leftButton)
+    this.mainDiv.appendChild(this.rightButton)
+  }
+
+  _setUpLeftButton() {
+    const buttonDisplay = document.createElement('button')
+    buttonDisplay.innerHTML = '<'
+
+    // Adding bootstrap styling
+    buttonDisplay.className = 'btn btn-primary btn-lg carouser-left carouser-btn disabled'
+    buttonDisplay.onclick = () => {
+      if (this.imageIndex !== 1) {
+        this.imageIndex--;
+        this.translateX += 320;
+        this.rightButton.classList.contains('disabled') ? this.rightButton.classList.remove('disabled') : null
+      } else {
+        this.leftButton.classList.add('disabled')
+      }
+      this.cardsContainer.style.transform = `translateX(${this.translateX}px)`;
+    }
+    return buttonDisplay
+  }
+
+  _setUpRightButton() {
+    const buttonDisplay = document.createElement('button')
+    buttonDisplay.innerHTML = '>'
+
+    // Adding bootstrap styling
+    buttonDisplay.className = 'btn btn-primary btn-lg carouser-right carouser-btn'
+    buttonDisplay.onclick = () => {
+      if (this.imageIndex !== this.cards.length) {
+        this.imageIndex++;
+        this.translateX -= 320;
+        this.leftButton.classList.contains('disabled') ? this.leftButton.classList.remove('disabled') : null
+      } else {
+        this.rightButton.classList.add('disabled')
+      }
+      this.cardsContainer.style.transform = `translateX(${this.translateX}px)`;
+    }
+    return buttonDisplay
+  }
+
+}

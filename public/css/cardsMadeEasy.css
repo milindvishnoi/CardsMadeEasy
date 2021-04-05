@@ -171,3 +171,57 @@ a {
 .project-card-links {
   margin: 0 10px 15px;
 }
+
+.carouser-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  width: 320px;
+}
+
+.carouser-container-inner {
+  scroll-snap-type: mandatory;
+  scroll-snap-type: x mandatory;
+  float: left;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  transform: translateX(0);
+  transition: transform 0.25s;
+}
+
+.carouser-container-inner::-webkit-scrollbar {
+  display: unset;
+}
+
+.carouser-container-inner > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.carouser-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  transition: transform 0.1s ease-in-out;
+  border-radius: 15px;
+  padding: 0.5rem;
+}
+
+.carouser-left {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+
+.carouser-container:hover > .carouser-left {
+  transform: translate(10%, -50%);
+}
+
+.carouser-right {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+.carouser-container:hover > .carouser-right {
+  transform: translate(-10%, -50%);
+}
