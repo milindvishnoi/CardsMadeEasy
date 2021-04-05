@@ -357,7 +357,7 @@ class CardList {
   }
 }
 
-class CardCarouser extends CardList {
+class CardCarousel extends CardList {
   constructor(selector, cardColor, containerColor) {
     super(selector, cardColor, containerColor)
     this.mainDiv.classList.add('carouser-container')
@@ -367,7 +367,7 @@ class CardCarouser extends CardList {
     this.leftButton = this._setUpLeftButton()
     this.rightButton = this._setUpRightButton()
 
-    this.imageIndex = 1
+    this.imageIndex = 0
     this.translateX = 0
 
     this.mainDiv.appendChild(this.leftButton)
@@ -381,11 +381,12 @@ class CardCarouser extends CardList {
     // Adding bootstrap styling
     buttonDisplay.className = 'btn btn-primary btn-lg carouser-left carouser-btn disabled'
     buttonDisplay.onclick = () => {
-      if (this.imageIndex !== 1) {
+      if (this.imageIndex !== 0) {
         this.imageIndex--;
         this.translateX += 320;
         this.rightButton.classList.contains('disabled') ? this.rightButton.classList.remove('disabled') : null
-      } else {
+      } 
+      if (this.imageIndex === 0) {
         this.leftButton.classList.add('disabled')
       }
       this.cardsContainer.style.transform = `translateX(${this.translateX}px)`;
@@ -404,7 +405,8 @@ class CardCarouser extends CardList {
         this.imageIndex++;
         this.translateX -= 320;
         this.leftButton.classList.contains('disabled') ? this.leftButton.classList.remove('disabled') : null
-      } else {
+      } 
+      if (this.imageIndex === this.cards.length) {
         this.rightButton.classList.add('disabled')
       }
       this.cardsContainer.style.transform = `translateX(${this.translateX}px)`;
