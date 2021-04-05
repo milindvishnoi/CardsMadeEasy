@@ -4,7 +4,8 @@ log('----------');
 log('Entered cardsMadeEasy js file');
 
 (function(global, document, $) { 
-  const logoLocation = '../logo-svgs/'
+  // Absolute path on Heroku servers as other developers will us this library
+  const logoLocation = 'https://ancient-coast-04001.herokuapp.com/logo-svgs/'
 
   class Card {
     constructor(selector, id) {
