@@ -255,6 +255,10 @@ log('Entered cardsMadeEasy js file');
     }
 
     #_flip() {
+      if (this.card.className.includes('flip'))
+        this.card.classList.remove('flip')
+      else
+        this.card.classList.add('flip')
       if (this.card.firstChild === this.frontView)
         this.card.replaceChild(this.backView, this.frontView)
       else

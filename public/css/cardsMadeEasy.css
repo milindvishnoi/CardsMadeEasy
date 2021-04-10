@@ -45,6 +45,10 @@ a {
   z-index: 1000;
 }
 
+.flip {
+  transform: rotateY(360deg);
+}
+
 .pointer:hover {
   cursor: pointer;
 }
