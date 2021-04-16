@@ -29,6 +29,11 @@ app.get('/getting-started', (req, res) => {
 	res.sendFile(path.join(__dirname, './pub/docs/getting-started.html'))
 })
 
+app.get('/api', (req, res) => {
+	//sending some HTML
+	res.sendFile(path.join(__dirname, './pub/docs/api.html'))
+})
+
 const port = process.env.PORT || 5000
 app.listen(port, () => {
 	console.log(`Listening on port ${port}...`)

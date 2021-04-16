@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>API</title>
+
+    <!-- Adding css for dillinger code -->
+    <link rel='stylesheet' href='../css/dillinger.css'>
+
+    <!-- Importing Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Adding my css -->
+    <link rel='stylesheet' href='../css/getting-started.css'>
+  </head>
+  
+  <body id="preview" class="bg-secondary">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="/">CardsMadeEasy</a>
+
+        <div id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/getting-started">Getting Started</a>
+              </li>
+  
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/api">API</a>
+              </li>
+  
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/examples">Examples</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container d-flex justify-content-center">
+    <div class="w-75">
+  <h1 class="code-line" data-line-start=0 data-line-end=1><a id="API_0"></a>API</h1>
+  <h3 class="code-line" data-line-start=1 data-line-end=2><a id="Quick_Access_1"></a>Quick Access</h3>
+  <p class="has-line-data" data-line-start="2" data-line-end="7"><a href="#Initializing_Card_Object_8">Initializing Card Object</a><br>
+  <a href="#Card_Methods_22">Card Methods</a><br>
+  <a href="#Customizing_your_card_according_to_the_style_100">Customizing your card according to the style</a><br>
+  <a href="#Initializing_CardList_Object_141">Initializing CardList Object</a><br>
+  <a href="#CardList_Methods_154">CardList Methods</a><br>
+  <a href="#Initializing_CardCarousel_Object_213">Initializing CardCarousel Object</a><br>
+  <a href="#CardCarousel_Methods_226">CardCarousel Methods</a></p>
+  <h1 class="code-line" data-line-start=8 data-line-end=9><a id="Initializing_Card_Object_8"></a>Initializing Card Object</h1>
+  <pre><code class="has-line-data" data-line-start="10" data-line-end="13" class="language-javascript"><span class="hljs-comment">// Pass the id for div tag in your HTML or the HTMLElement. In our example, we used 'card-id'.</span>
+  <span class="hljs-keyword">const</span> card = <span class="hljs-keyword">new</span> Card(<span class="hljs-string">'card-id'</span>, <span class="hljs-string">'card1'</span>);
+  </code></pre>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>selector</code></td>
+  <td>(required)</td>
+  <td>String/HTMLElement</td>
+  <td>This is the id of the <em>div</em> tag in the HTML or the HTMLElement that you want to display the card in.</td>
+  </tr>
+  <tr>
+  <td><code>id</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the id of the card that you will be creating.</td>
+  </tr>
+  </tbody>
+  </table>
+  <blockquote>
+  <p class="has-line-data" data-line-start="20" data-line-end="21">Always use methods mentioned below to modify the cards.</p>
+  </blockquote>
+  <h1 class="code-line" data-line-start=22 data-line-end=23><a id="Card_Methods_22"></a>Card Methods</h1>
+  <pre><code class="has-line-data" data-line-start="24" data-line-end="27" class="language-javascript"><span class="hljs-comment">// Create a General Card</span>
+  makeGeneralCard(title, subtitle, imgSrc)
+  </code></pre>
+  <p class="has-line-data" data-line-start="27" data-line-end="28">This method creates a General Card with the given properties. The method should strictly follow the following property requirements:</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Requirement</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>title</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the title of the card. This is displayed in large text in general card.</td>
+  </tr>
+  <tr>
+  <td><code>subtitle</code></td>
+  <td>(optional)</td>
+  <td>String</td>
+  <td>This is the subtitle of the card. This is displayed as small text below title.</td>
+  </tr>
+  <tr>
+  <td><code>imgSrc</code></td>
+  <td>(optional)</td>
+  <td>String</td>
+  <td>This is the source of the image that will be displayed in the front of the card.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="36" data-line-end="39" class="language-javascript"><span class="hljs-comment">// Create a Product Card</span>
+  makeProductCard(title, desc, imgSrc, button1, button2)
+  </code></pre>
+  <p class="has-line-data" data-line-start="39" data-line-end="40">This method creates a Project Card with the given properties. The method should strictly follow the following property requirements:</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>title</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the title of the card. This is displayed in large text in product card.</td>
+  </tr>
+  <tr>
+  <td><code>desc</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the desc of the card. This is displayed as text below title which describes the product.</td>
+  </tr>
+  <tr>
+  <td><code>imgSrc</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the source of the image that will be displayed in the front of the card.</td>
+  </tr>
+  <tr>
+  <td><code>button1</code></td>
+  <td>(required)</td>
+  <td>Object</td>
+  <td>You need to provide the text and link for the button in an object. It is displayed in the bottom of the card.</td>
+  </tr>
+  <tr>
+  <td><code>button2</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>You need to provide the text and link for the button in an object. It is displayed in the bottom of the card next to button1.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="50" data-line-end="53" class="language-javascript"><span class="hljs-comment">// Create a Teammate Card</span>
+  makeTeammateCard(title, subtitle, imgSrc, links)
+  </code></pre>
+  <p class="has-line-data" data-line-start="53" data-line-end="54">This method creates a Teammate Card with the given properties. The method should strictly follow the following property requirements:</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>title</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the title of the card. This is displayed the name of the teammate in teammate card.</td>
+  </tr>
+  <tr>
+  <td><code>subtitle</code></td>
+  <td>(optional)</td>
+  <td>String</td>
+  <td>This is the subtitle of the card. This is displayed as small text below title which is used to tells what the teammate does.</td>
+  </tr>
+  <tr>
+  <td><code>imgSrc</code></td>
+  <td>(optional)</td>
+  <td>String</td>
+  <td>This is the source of the image that will be displayed in the front of the card.</td>
+  </tr>
+  <tr>
+  <td><code>links</code></td>
+  <td>(required)</td>
+  <td>Object</td>
+  <td>This is an object that is used to show links on a card below the subtitle with their icons.</td>
+  </tr>
+  </tbody>
+  </table>
+  <blockquote>
+  <p class="has-line-data" data-line-start="62" data-line-end="63">Example link object</p>
+  </blockquote>
+  <pre><code class="has-line-data" data-line-start="64" data-line-end="70"> {
+      'github': 'https://github.com/',
+      'instagram': 'https://www.instagram.com/',
+      'linkedin': 'https://linkedin.com'
+   }
+  </code></pre>
+  <pre><code class="has-line-data" data-line-start="72" data-line-end="75" class="language-javascript"><span class="hljs-comment">// Create a Project Card</span>
+  makeProjectCard(title, desc, links)
+  </code></pre>
+  <p class="has-line-data" data-line-start="75" data-line-end="76">This method creates a Project Card with the given properties. The method should strictly follow the following property requirements:</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>title</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the title of the card. This is displayed in large text in project card.</td>
+  </tr>
+  <tr>
+  <td><code>desc</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the desc of the card. This is displayed as text below links which describes the project.</td>
+  </tr>
+  <tr>
+  <td><code>links</code></td>
+  <td>(required)</td>
+  <td>Object</td>
+  <td>This is an object that is used to show links on a card below the title with their icons.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="84" data-line-end="87" class="language-javascript"><span class="hljs-comment">// Add Zoom Feature on a card</span>
+  addZoom()
+  </code></pre>
+  <p class="has-line-data" data-line-start="87" data-line-end="88">This method adds the ability to zoom to the card. It will zoom the card when you hover over it.</p>
+  <pre><code class="has-line-data" data-line-start="90" data-line-end="93" class="language-javascript"><span class="hljs-comment">// Add a flip feature and show the backview of the card</span>
+  addFlip(title, desc)
+  </code></pre>
+  <p class="has-line-data" data-line-start="93" data-line-end="94">This method adds the ability to flip a card. It will flip the card when you click on the card and show you in the backview of that card.</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>title</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is the title of the card. This is displayed in large text in backview of that card.</td>
+  </tr>
+  <tr>
+  <td><code>desc</code></td>
+  <td>(optional)</td>
+  <td>String</td>
+  <td>This is the description of the card. This is displayed as small text below title in the backview.</td>
+  </tr>
+  </tbody>
+  </table>
+  <h3 class="code-line" data-line-start=100 data-line-end=101><a id="Customizing_your_card_according_to_the_style_100"></a>Customizing your card according to the style</h3>
+  <pre><code class="has-line-data" data-line-start="102" data-line-end="105" class="language-javascript"><span class="hljs-comment">// Changes the background color</span>
+  changeBackgroundColor(color)
+  </code></pre>
+  <p class="has-line-data" data-line-start="105" data-line-end="106">This method changes the color of the card. The requirement for this method is as explained below:</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>color</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>You need to provide the color (in hex, word or rbg) that you want the background to be.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="112" data-line-end="115" class="language-javascript"><span class="hljs-comment">// Changes the title color</span>
+  changeTitleColor(color)
+  </code></pre>
+  <p class="has-line-data" data-line-start="115" data-line-end="116">This method changes the title color of the card. The same requirement as changeBackgroundColor.</p>
+  <pre><code class="has-line-data" data-line-start="118" data-line-end="121" class="language-javascript"><span class="hljs-comment">// Changes the subtitle color</span>
+  changeSubtitleColor(color)
+  </code></pre>
+  <p class="has-line-data" data-line-start="121" data-line-end="122">This method changes the subtitle color of the card. The same requirement as changeBackgroundColor.</p>
+  <pre><code class="has-line-data" data-line-start="124" data-line-end="127" class="language-javascript"><span class="hljs-comment">// Changes the description color</span>
+  changeDescriptionColor(color)
+  </code></pre>
+  <p class="has-line-data" data-line-start="127" data-line-end="128">This method changes the description color of the card. The same requirement as changeBackgroundColor.</p>
+  <pre><code class="has-line-data" data-line-start="130" data-line-end="133" class="language-javascript"><span class="hljs-comment">// Chnages the backview title color</span>
+  changeBackTitleColor(color)
+  </code></pre>
+  <p class="has-line-data" data-line-start="133" data-line-end="134">This method changes the backview title color of the card. The same requirement as changeBackgroundColor.</p>
+  <pre><code class="has-line-data" data-line-start="136" data-line-end="139" class="language-javascript"><span class="hljs-comment">// Chnages the back description color</span>
+  changeBackDescriptionColor(color)
+  </code></pre>
+  <p class="has-line-data" data-line-start="139" data-line-end="140">This method changes the back description color of the card. The same requirement as changeBackgroundColor.</p>
+  <h2 class="code-line" data-line-start=141 data-line-end=142><a id="Initializing_CardList_Object_141"></a>Initializing CardList Object</h2>
+  <pre><code class="has-line-data" data-line-start="143" data-line-end="147" class="language-javascript"><span class="hljs-comment">// Pass the id for div tag in your HTML or the HTMLElement. In our example, we used 'card-id'.</span>
+  <span class="hljs-comment">// It creates a cardList which is screen responsive</span>
+  <span class="hljs-keyword">const</span> card = <span class="hljs-keyword">new</span> CardList(<span class="hljs-string">'card-id'</span>, <span class="hljs-string">'red'</span>, <span class="hljs-string">'white'</span>);
+  </code></pre>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>selector</code></td>
+  <td>(required)</td>
+  <td>String/HTMLElement</td>
+  <td>This is the id of the <em>div</em> tag in the HTML or the HTMLElement that you want to display the card in.</td>
+  </tr>
+  <tr>
+  <td><code>cardColor</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is to specify the color of all the cards that are going to be created</td>
+  </tr>
+  <tr>
+  <td><code>conatinerColor</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is to specify the color of container that contains all the colors</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 class="code-line" data-line-start=154 data-line-end=155><a id="CardList_Methods_154"></a>CardList Methods</h2>
+  <pre><code class="has-line-data" data-line-start="157" data-line-end="160" class="language-javascript"><span class="hljs-comment">// Used to create a general card in the card list</span>
+  addGeneralCard(id, title, subtitle, imgSrc)
+  </code></pre>
+  <p class="has-line-data" data-line-start="160" data-line-end="161">This method creates a General Card with the given properties in the CardList. The method should strictly follow the following property requirements and the properties of makeGeneralCard method in Card Methods:</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Requirement</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>id</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>The id of the card that you want to create, it will be used to access this card.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="167" data-line-end="170" class="language-javascript"><span class="hljs-comment">// Used to create a project card in the card list</span>
+  addProductCard(id, title, desc, imgSrc, button1, button2)
+  </code></pre>
+  <p class="has-line-data" data-line-start="170" data-line-end="171">This method creates a Product Card with the given properties in the cardList. The method should strictly provide the id as shown in the addGeneralCard method. You also need to follow the property requirement of the makeProjectCard method in Card Methods.</p>
+  <pre><code class="has-line-data" data-line-start="174" data-line-end="177" class="language-javascript"><span class="hljs-comment">// Used to create a teammate card in the card list</span>
+  addTeammateCard(id, title, subtitle, imgSrc, links)
+  </code></pre>
+  <p class="has-line-data" data-line-start="177" data-line-end="178">This method creates a Teammate Card with the given properties in the cardList. The method should strictly provide the id as shown in the addGeneralCard method. You also need to follow the property requirement of the makeTeammateCard method in Card Methods.</p>
+  <pre><code class="has-line-data" data-line-start="181" data-line-end="184" class="language-javascript"><span class="hljs-comment">// Used to create a project card in the card list</span>
+  addProjectCard(id, title, desc, links)
+  </code></pre>
+  <p class="has-line-data" data-line-start="184" data-line-end="185">This method creates a Project Card with the given properties in the cardList. The method should strictly provide the id as shown in the addGeneralCard method. You also need to follow the property requirement of the makeProjectCard method in Card Methods.</p>
+  <pre><code class="has-line-data" data-line-start="187" data-line-end="190" class="language-javascript"><span class="hljs-comment">// Gets a specific card in the cardList with an id</span>
+  getCard(id)
+  </code></pre>
+  <p class="has-line-data" data-line-start="190" data-line-end="191">This method returns the card in cardList which matches that id provided in the parameter.</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Requirement</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>id</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>The id of the card that you want to access.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="198" data-line-end="201" class="language-javascript"><span class="hljs-comment">// Used to remove a card in the cardList with a perticular id</span>
+  removeCard(id)
+  </code></pre>
+  <p class="has-line-data" data-line-start="201" data-line-end="202">Deletes the specific card from the cardList and adjusts the DOM automatically.</p>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Requirement</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>id</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>The id of the card that you want to delete.</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code class="has-line-data" data-line-start="208" data-line-end="211" class="language-javascript"><span class="hljs-comment">// Used to add the zoom feature to all the cards in the cardList</span>
+  addZoomToAll()
+  </code></pre>
+  <p class="has-line-data" data-line-start="211" data-line-end="212">Adds a zoom feature to all the current cards. It also updates the new cards created to have the zoom feature.</p>
+  <h2 class="code-line" data-line-start=213 data-line-end=214><a id="Initializing_CardCarousel_Object_213"></a>Initializing CardCarousel Object</h2>
+  <pre><code class="has-line-data" data-line-start="215" data-line-end="219" class="language-javascript"><span class="hljs-comment">// Pass the id for div tag in your HTML or the HTMLElement. In our example, we used 'card-id'.</span>
+  <span class="hljs-comment">// It creates a CardCarousel which shows multiple cards in a carousel form</span>
+  <span class="hljs-keyword">const</span> card = <span class="hljs-keyword">new</span> CardCarousel(<span class="hljs-string">'card-id'</span>, <span class="hljs-string">'red'</span>, <span class="hljs-string">'white'</span>);
+  </code></pre>
+  <table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+  <th>Property</th>
+  <th>Default</th>
+  <th>Type</th>
+  <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>selector</code></td>
+  <td>(required)</td>
+  <td>String/HTMLElement</td>
+  <td>This is the id of the <em>div</em> tag in the HTML or the HTMLElement that you want to display the card in.</td>
+  </tr>
+  <tr>
+  <td><code>cardColor</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is to specify the color of all the cards that are going to be created</td>
+  </tr>
+  <tr>
+  <td><code>conatinerColor</code></td>
+  <td>(required)</td>
+  <td>String</td>
+  <td>This is to specify the color of container that contains all the colors</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 class="code-line" data-line-start=226 data-line-end=227><a id="CardCarousel_Methods_226"></a>CardCarousel Methods</h2>
+  <p class="has-line-data" data-line-start="227" data-line-end="228">It is a child class of CardList and therefore it can be all the methods of defined in the CardList.</p>
+  </div>
+</div>
+  </body></html>
