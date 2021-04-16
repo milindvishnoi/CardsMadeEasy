@@ -29,9 +29,9 @@ app.get('/getting-started', (req, res) => {
 	res.sendFile(path.join(__dirname, './pub/docs/getting-started.html'))
 })
 
-app.get('/api', (req, res) => {
+app.get('/docs', (req, res) => {
 	//sending some HTML
-	res.sendFile(path.join(__dirname, './pub/docs/api.html'))
+	res.sendFile(path.join(__dirname, './pub/docs/docs.html'))
 })
 
 const port = process.env.PORT || 5000
