@@ -1,0 +1,39 @@
+.landing {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing h1 {
+  font-family: 'Special Elite', cursive;
+  font-size: 130px;
+}
+
+.landing p {
+  font-family: 'Inconsolata', monospace;
+  font-size: 25px;
+  font-weight: 600;
+  width: 60%;
+}
+
+@media screen and (max-width: 992px) {
+  .landing h1 {
+    font-size: 90px;
+  }
+  
+  .landing p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing h1 {
+    font-size: 60px;
+  }
+  
+  .landing p {
+    font-size: 15px;
+    width: 80%;
+  }
+}

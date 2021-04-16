@@ -5,7 +5,7 @@ log('Entered cardsMadeEasy js file');
 
 (function(global, document, $) { 
   // Absolute path on Heroku servers as other developers will us this library
-  const logoLocation = 'https://ancient-coast-04001.herokuapp.com/logo-svgs/'
+  const logoLocation = 'https://mysterious-dawn-71990.herokuapp.com/logo-svgs/'
 
   class Card {
     constructor(selector, id) {
@@ -91,6 +91,7 @@ log('Entered cardsMadeEasy js file');
     }
 
     changeTitleColor(color) {
+      log(this.frontView.getElementsByClassName('title')[0])
       this.frontView.getElementsByClassName('title')[0].style.color = color
     }
 
@@ -99,6 +100,7 @@ log('Entered cardsMadeEasy js file');
     }
 
     changeDescriptionColor(color) {
+      log(this.frontView.getElementsByClassName('desc')[0])
       this.frontView.getElementsByClassName('desc')[0].style.color = color
     }
 
@@ -285,7 +287,10 @@ log('Entered cardsMadeEasy js file');
   class CardList {
     constructor(selector, cardColor, containerColor) {
       // Container div
-      this.mainDiv = document.getElementById(selector)
+      if (typeof selector === 'string')
+        this.mainDiv = document.getElementById(selector)
+      else
+        this.mainDiv = selector
 
       this.cardsContainer = document.createElement('div')
       this.cardsContainer.className = 'main-container-div'

@@ -10,7 +10,12 @@ app.use(express.static(path.join(__dirname, '/pub')))
 
 app.get('/', (req, res) => {
 	//sending some HTML
-	res.sendFile(path.join(__dirname, './pub/examples.html'))
+	res.sendFile(path.join(__dirname, './pub/pages/home.html'))
+})
+
+app.get('/examples', (req, res) => {
+	//sending some HTML
+	res.sendFile(path.join(__dirname, './pub/pages/examples.html'))
 })
 
 const port = process.env.PORT || 5000
