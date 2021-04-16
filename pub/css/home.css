@@ -17,6 +17,19 @@
   width: 60%;
 }
 
+.highlight {
+  background-color: #b6b6b6;
+  padding: 30px 10px 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: 'Special Elite', cursive;
+  font-size: 40px;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 992px) {
   .landing h1 {
     font-size: 90px;
@@ -25,15 +38,23 @@
   .landing p {
     font-size: 15px;
   }
+
+  h2 {
+    font-size: 25px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .landing h1 {
-    font-size: 60px;
+    font-size: 50px;
   }
   
   .landing p {
     font-size: 15px;
     width: 80%;
+  }
+
+  h2 {
+    font-size: 20px;
   }
 }

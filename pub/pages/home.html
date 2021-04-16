@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
   rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
   crossorigin="anonymous">
-  <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -47,10 +47,36 @@
       </div>
     </div>
 
-    <div>
-      <h2>A couple cards created by developers using this library</h2>
+    <div class="highlight">
+      <h2>Cards developers created:</h2>
+
+      <div class="d-flex justify-content-center">
+        <div id="carouselExampleControls" class="carousel slide p-4 w-50" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div id='card1' class="d-block w-100 d-flex justify-content-center m-3"></div>
+            </div>
+            <div class="carousel-item">
+              <div id='card2' class="d-block w-100 d-flex justify-content-center m-3"></div>
+            </div>
+            <div class="carousel-item">
+              <div id='card3' class="d-block w-100 d-flex justify-content-center m-3"></div>
+            </div>
+            <div class="carousel-item">
+              <div id='card4' class="d-block w-100 d-flex justify-content-center m-3"></div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
-    <div id='cardDisplay' class="card-bottom-display"></div>
   </div>
 </body>
 </html>
