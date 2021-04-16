@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/csc309-winter-2021/js-library-vishnoim#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "markdown-it": "^12.0.6"
   }
 }

@@ -6,6 +6,12 @@ const express = require('express')
 const app = express();
 const path = require('path');
 
+var md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typographer: true
+});
+
 app.use(express.static(path.join(__dirname, '/pub')))
 
 app.get('/', (req, res) => {
@@ -16,6 +22,11 @@ app.get('/', (req, res) => {
 app.get('/examples', (req, res) => {
 	//sending some HTML
 	res.sendFile(path.join(__dirname, './pub/pages/examples.html'))
+})
+
+app.get('/getting-started', (req, res) => {
+	//sending some HTML
+	res.sendFile(path.join(__dirname, './pub/docs/getting-started.html'))
 })
 
 const port = process.env.PORT || 5000
