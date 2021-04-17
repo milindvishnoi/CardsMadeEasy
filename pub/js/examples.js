@@ -1,4 +1,5 @@
 "use strict";
+const log = console.log;
 log('----------')
 log('Entered example.js')
 
