@@ -1,11 +1,10 @@
 "use strict";
-const log = console.log;
 log('----------')
 log('Entered example.js')
 
 // Feature 1
 const card1 = new Card('card1', 'card-id-1')
-card1.makeGeneralCard('Jeff', 'Model', './img/jeff.jpg')
+card1.makeGeneralCard('Jeff', 'Model', '../img/jeff.jpg')
 const cardWithoutImage = new Card('card-no-img', 'card-no-img')
 cardWithoutImage.makeProductCard('McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
@@ -23,11 +22,11 @@ cardWithoutImage.changeBackgroundColor('grey')
 
 // Feature 2
 const card5 = new Card('card5', 'card-id-5')
-card5.makeGeneralCard('Jeff', 'Model', './img/jeff.jpg')
+card5.makeGeneralCard('Jeff', 'Model', '../img/jeff.jpg')
 const productCard = new Card('card2', 'card-id-2')
 productCard.makeProductCard('McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
-                      './img/mclaren.jpeg',
+                      '../img/mclaren.jpeg',
                       {
                         'text': 'Check Out',
                         'link': 'https://www.mclaren.com/'
@@ -40,7 +39,7 @@ productCard.makeProductCard('McLaren 570s',
 productCard.changeBackgroundColor('grey')
 
 const card2 = new Card('card3', 'card-id-3')
-card2.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg', 
+card2.makeTeammateCard('Kristen', 'Core Developer', '../img/developer.jpeg', 
   {
     'github': 'https://github.com/milindvishnoi',
     'instagram': 'https://www.instagram.com/',
@@ -64,7 +63,7 @@ cardList.addProjectCard('c1', 'Material Math', 'Practice Math problems in a fun,
   'github': 'https://github.com/grey-software/Material-Math',
   'url': 'https://material-math.grey.software/#/'
 })
-cardList.addTeammateCard('c2', 'Mills', 'Core Developer', './img/developer.jpeg', 
+cardList.addTeammateCard('c2', 'Mills', 'Core Developer', '../img/developer.jpeg', 
   {
     'github': 'https://github.com/milindvishnoi',
     'instagram': 'https://www.instagram.com/',
@@ -73,7 +72,7 @@ cardList.addTeammateCard('c2', 'Mills', 'Core Developer', './img/developer.jpeg'
 )
 cardList.addProductCard('c3', 'McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
-                      './img/mclaren.jpeg',
+                      '../img/mclaren.jpeg',
                       {
                         'text': 'Check Out',
                         'link': 'https://www.mclaren.com/'
@@ -138,10 +137,10 @@ editSubtitleColorForm.addEventListener('submit', (e) => {
 
 // Feature 7
 const zoomCard = new Card('zoom-card', 'zoom-card-1')
-zoomCard.makeGeneralCard('Jeff', 'Model', './img/jeff.jpg')
+zoomCard.makeGeneralCard('Jeff', 'Model', '../img/jeff.jpg')
 zoomCard.addZoom()
 const teamZoom = new Card('team-zoom', 'zoom-card-2')
-teamZoom.makeTeammateCard('Kristen', 'Core Developer', './img/developer.jpeg', 
+teamZoom.makeTeammateCard('Kristen', 'Core Developer', '../img/developer.jpeg', 
   {
     'github': 'https://github.com/milindvishnoi',
     'instagram': 'https://www.instagram.com/',
@@ -155,7 +154,7 @@ teamZoom.addZoom()
 const productZoomCard = new Card('product-flip', 'flip-card')
 productZoomCard.makeProductCard('McLaren 570s', 
                       'Aspirations are for those who hope to make it big; the 2020 McLaren 570S is for those who actually do.',
-                      './img/mclaren.jpeg',
+                      '../img/mclaren.jpeg',
                       {
                         'text': 'Check Out',
                         'link': 'https://www.mclaren.com/'
@@ -169,12 +168,12 @@ productZoomCard.addFlip('More Details', 'It’s the ultimate sports car experien
 
 // Feature 9
 const carouselCards = new CardCarousel('carousel', 'yellow', '#62678a')
-carouselCards.addGeneralCard('Barney', 'Barney', 'Philathropist', './img/barney.jpeg')
-carouselCards.addGeneralCard('Ted', 'Ted', 'Architect', './img/ted.jpeg')
+carouselCards.addGeneralCard('Barney', 'Barney', 'Philathropist', '../img/barney.jpeg')
+carouselCards.addGeneralCard('Ted', 'Ted', 'Architect', '../img/ted.jpeg')
 carouselCards.getCard('Ted').changeSubtitleColor('white')
 carouselCards.getCard('Ted').changeTitleColor('white')
-carouselCards.addGeneralCard('Robin', 'Robin', 'Journalist', './img/robin.jpeg')
-carouselCards.addGeneralCard('Marshal', 'Marshal', 'Lawyer', './img/marshal.jpeg')
+carouselCards.addGeneralCard('Robin', 'Robin', 'Journalist', '../img/robin.jpeg')
+carouselCards.addGeneralCard('Marshal', 'Marshal', 'Lawyer', '../img/marshal.jpeg')
 carouselCards.getCard('Marshal').changeSubtitleColor('white')
 carouselCards.getCard('Marshal').changeTitleColor('white')
-carouselCards.addGeneralCard('Lily', 'Lily', 'Teacher', './img/lily.jpeg')
+carouselCards.addGeneralCard('Lily', 'Lily', 'Teacher', '../img/lily.jpeg')
