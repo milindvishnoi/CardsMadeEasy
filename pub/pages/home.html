@@ -28,6 +28,30 @@
 </head>
 
 <body class="bg-secondary">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container d-flex justify-content-between">
+      <a class="navbar-brand" href="/">CardsMadeEasy</a>
+
+      <div id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/getting-started">Getting Started</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/docs">Documentation</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/examples">Examples</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
   <div class="container">
     <div class="landing">
       <div class="d-flex flex-column align-items-center text-center">
@@ -47,11 +71,33 @@
       </div>
     </div>
 
+    <div class="row">
+      <h1 class="text-center grid-h1 w-100">Why CardsMadeEasy?</h1>
+
+      <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+        <img src='../img/hands.png' alt='Easy to use image' class="grid-img">
+        <div class="grid-title">Easy to Use</div>
+        <div class="grid-desc">The library is made to be developer friendly. Just adding a couple of JS lines you can create your own cards.</div>
+      </div>
+
+      <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+        <img src='../img/color-scheme.png' alt='Customization image' class="grid-img">
+        <div class="grid-title">Customizable</div>
+        <div class="grid-desc">We know all websites have their own design and color schemes. CardsMadeEasy makes it easy to customize cards according to your website design</div>
+      </div>
+
+      <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+        <img src='../img/custom-features.png' alt='Vast features image' class="grid-img">
+        <div class="grid-title">Vast Features</div>
+        <div class="grid-desc">CardsMadeEasy has some amazing set of functionalities. You don't need to worry about DOM manipulation, adding animations, or creating a carousel!</div>
+      </div>
+    </div>
+
     <div class="highlight">
       <h2>Cards developers created:</h2>
 
       <div class="d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide p-4 w-50" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide p-4 w-100" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div id='card1' class="d-block w-100 d-flex justify-content-center m-3"></div>

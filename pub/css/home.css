@@ -1,5 +1,5 @@
 .landing {
-  height: 100vh;
+  height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,29 @@ h2 {
   font-weight: 700;
 }
 
+.grid-h1 {
+  font-family: 'Special Elite', cursive;
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+
+.grid-img {
+  margin-top: 5%;
+  width: 150px;
+  margin-bottom: 5%;
+}
+
+.grid-title {
+  margin-bottom: 5%;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.grid-desc {
+  margin-bottom: 100px;
+  font-size: 18px;
+}
+
 @media screen and (max-width: 992px) {
   .landing h1 {
     font-size: 90px;
@@ -56,5 +79,9 @@ h2 {
 
   h2 {
     font-size: 20px;
+  }
+
+  .grid-h1 {
+    font-size: 40px;
   }
 }
