@@ -5,6 +5,7 @@ CardsMadeEasy is an unique js library that will provide developers ability to cr
 **Note** : In this repository, the library can be located at  `/pub/js/cardsMadeEasy.js`  and style sheet for library at  `/pub/css/cardsMadeEasy.css`.
 
 **Link**: https://mysterious-dawn-71990.herokuapp.com/
+
 **Documentation**: https://mysterious-dawn-71990.herokuapp.com/docs
 
 # Getting Started
