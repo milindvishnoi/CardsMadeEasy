@@ -1,13 +1,20 @@
-# CardsMadeEasy
+<h1 align="center">
+    <p align="center">CardsMadeEasy</p>
+    <img src="">
+    <a href="https://mysterious-dawn-71990.herokuapp.com/">
+        <img width="40px" src="https://github.com/milindvishnoi/milindvishnoi/blob/master/worldwide.png">
+    </a>
+    <a href="https://mysterious-dawn-71990.herokuapp.com/docs">
+        <img src="https://user-images.githubusercontent.com/48028572/120033256-fa899200-c018-11eb-88bd-66edfb026f79.png" width="40px">
+    </a>
+</h1>
 
 CardsMadeEasy is an unique js library that will provide developers ability to create multiple cards with just a couple of js lines. Being a frontend developer for over a couple of months, I realised a lot of the frontend of a website is creating different kinds of cards to display various information. This is where CardMadeEasy comes to rescue. CardsMadeEasy allows users to choose from a variety of different card designs depending on the specification they require. Using this library, allows users to organize cards using grid manipulation to fit perfectly to their application. Users will be able to add/remove and update a specific card from the cards components using the library API. Further using the API, developers will have an option to display photos/color, choose from flip and zoom animation, add/delete cards, display a group of cards with grid manipulations and will also be able to customize color combinations for all the cards.
 
 **Note** : In this repository, the library can be located at  `/pub/js/cardsMadeEasy.js`  and style sheet for library at  `/pub/css/cardsMadeEasy.css`.
 
-**Link**: https://mysterious-dawn-71990.herokuapp.com/
-
-**Documentation**: https://mysterious-dawn-71990.herokuapp.com/docs
-
+<img align="center" src="https://user-images.githubusercontent.com/48028572/120031842-f9effc00-c016-11eb-8486-6f374dece6ba.png">
+    
 # Getting Started
 ## Introduction
 #### Get started CardsMadeEasy, to choose from a variety of different card designs and displaying techniques to make your developing expereience better.
