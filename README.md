@@ -1,13 +1,18 @@
 <h1 align="center">
     <p align="center">CardsMadeEasy</p>
-    <img src="">
+    <img align="center" src="./img/logo.png" width="258px">
+</h1>
+
+<h4 align="center">
+    CardsMadeEasy is an unique js library that will provide developers ability to create multiple cards with just a couple of js lines.
+    <br />
     <a href="https://mysterious-dawn-71990.herokuapp.com/">
-        <img width="40px" src="https://github.com/milindvishnoi/milindvishnoi/blob/master/worldwide.png">
+        <img width="30px" src="https://github.com/milindvishnoi/milindvishnoi/blob/master/worldwide.png">
     </a>
     <a href="https://mysterious-dawn-71990.herokuapp.com/docs">
-        <img src="https://user-images.githubusercontent.com/48028572/120033256-fa899200-c018-11eb-88bd-66edfb026f79.png" width="40px">
+        <img src="https://user-images.githubusercontent.com/48028572/120033256-fa899200-c018-11eb-88bd-66edfb026f79.png" width="30px">
     </a>
-</h1>
+</h4>
 
 CardsMadeEasy is an unique js library that will provide developers ability to create multiple cards with just a couple of js lines. Being a frontend developer for over a couple of months, I realised a lot of the frontend of a website is creating different kinds of cards to display various information. This is where CardMadeEasy comes to rescue. CardsMadeEasy allows users to choose from a variety of different card designs depending on the specification they require. Using this library, allows users to organize cards using grid manipulation to fit perfectly to their application. Users will be able to add/remove and update a specific card from the cards components using the library API. Further using the API, developers will have an option to display photos/color, choose from flip and zoom animation, add/delete cards, display a group of cards with grid manipulations and will also be able to customize color combinations for all the cards.
 

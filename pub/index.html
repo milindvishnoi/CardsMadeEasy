@@ -1,128 +1,132 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Importing Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
-  rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
-  crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Importing Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Special+Elite&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Special+Elite&display=swap" rel="stylesheet">
 
-  <!-- Library Css -->
-  <link rel='stylesheet' href='./css/cardsMadeEasy.css'>
+    <!-- Library Css -->
+    <link rel='stylesheet' href='./css/cardsMadeEasy.css'>
 
-  <!-- My Library -->
-  <script defer src='./js/cardsMadeEasy.js'></script>
-  <script defer src='./js/home.js'></script>
+    <!-- My Library -->
+    <script defer src='./js/cardsMadeEasy.js'></script>
+    <script defer src='./js/home.js'></script>
 
-  <!-- Importing CSS -->
-  <link rel='stylesheet' href='./css/home.css'>
+    <!-- Importing CSS -->
+    <link rel='stylesheet' href='./css/home.css'>
 
-  <title>Cards Made Easy</title>
-</head>
+    <title>Cards Made Easy</title>
+  </head>
 
-<body class="bg-secondary">
-  <!-- Navbar -->
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container d-flex justify-content-between">
-      <a class="navbar-brand" href="/">CardsMadeEasy</a>
+  <body class="bg-secondary">
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="/">
+          <img src="../img/logo.png" style="width: 30px;">
+          CardsMadeEasy
+        </a>
 
-      <div id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./docs/getting-started.html">Getting Started</a>
-            </li>
+        <div id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./docs/getting-started.html">Getting Started</a>
+              </li>
 
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./docs/docs.html">Documentation</a>
-            </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./docs/docs.html">Documentation</a>
+              </li>
 
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pages/examples.html">Examples</a>
-            </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <div class="container">
-    <div class="landing">
-      <div class="d-flex flex-column align-items-center text-center">
-        <h1>CardsMadeEasy</h1>
-        <p>Create unique multiple cards and customize to your website style.</p>
-        <div>
-          <a href="./docs/getting-started.html">
-            <button type="button" class="btn btn-dark mx-2">Getting started</button>
-          </a>
-          <a href="./docs/docs.html">
-            <button type="button" class="btn btn-dark mx-2">Documentation</button>
-          </a>
-          <a href="./pages/examples.html">
-            <button type="button" class="btn btn-dark mx-2">Examples</button>
-          </a>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./pages/examples.html">Examples</a>
+              </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <div class="row">
-      <h1 class="text-center grid-h1 w-100">Why CardsMadeEasy?</h1>
 
-      <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-        <img src='../img/hands.png' alt='Easy to use image' class="grid-img">
-        <div class="grid-title">Easy to Use</div>
-        <div class="grid-desc">The library is made to be developer friendly. Just adding a couple of JS lines you can create your own cards.</div>
-      </div>
-
-      <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-        <img src='../img/color-scheme.png' alt='Customization image' class="grid-img">
-        <div class="grid-title">Customizable</div>
-        <div class="grid-desc">We know all websites have their own design and color schemes. CardsMadeEasy makes it easy to customize cards according to your website design</div>
-      </div>
-
-      <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-        <img src='../img/custom-features.png' alt='Vast features image' class="grid-img">
-        <div class="grid-title">Vast Features</div>
-        <div class="grid-desc">CardsMadeEasy has some amazing set of functionalities. You don't need to worry about DOM manipulation, adding animations, or creating a carousel!</div>
-      </div>
-    </div>
-
-    <div class="highlight">
-      <h2>Cards developers created:</h2>
-
-      <div class="d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide p-4 w-100" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div id='card1' class="d-block w-100 d-flex justify-content-center m-3"></div>
-            </div>
-            <div class="carousel-item">
-              <div id='card2' class="d-block w-100 d-flex justify-content-center m-3"></div>
-            </div>
-            <div class="carousel-item">
-              <div id='card3' class="d-block w-100 d-flex justify-content-center m-3"></div>
-            </div>
-            <div class="carousel-item">
-              <div id='card4' class="d-block w-100 d-flex justify-content-center m-3"></div>
-            </div>
+    <div class="container">
+      <div class="landing">
+        <div class="d-flex flex-column align-items-center text-center">
+          <h1>CardsMadeEasy</h1>
+          <p>Create unique multiple cards and customize to your website style.</p>
+          <div>
+            <a href="./docs/getting-started.html">
+              <button type="button" class="btn btn-dark mx-2">Getting started</button>
+            </a>
+            <a href="./docs/docs.html">
+              <button type="button" class="btn btn-dark mx-2">Documentation</button>
+            </a>
+            <a href="./pages/examples.html">
+              <button type="button" class="btn btn-dark mx-2">Examples</button>
+            </a>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <h1 class="text-center grid-h1 w-100">Why CardsMadeEasy?</h1>
+
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+          <img src='../img/hands.png' alt='Easy to use image' class="grid-img">
+          <div class="grid-title">Easy to Use</div>
+          <div class="grid-desc">The library is made to be developer friendly. Just adding a couple of JS lines you can create your own cards.</div>
+        </div>
+
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+          <img src='../img/color-scheme.png' alt='Customization image' class="grid-img">
+          <div class="grid-title">Customizable</div>
+          <div class="grid-desc">We know all websites have their own design and color schemes. CardsMadeEasy makes it easy to customize cards according to your website design</div>
+        </div>
+
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+          <img src='../img/custom-features.png' alt='Vast features image' class="grid-img">
+          <div class="grid-title">Vast Features</div>
+          <div class="grid-desc">CardsMadeEasy has some amazing set of functionalities. You don't need to worry about DOM manipulation, adding animations, or creating a carousel!</div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h2>Cards developers created:</h2>
+
+        <div class="d-flex justify-content-center">
+          <div id="carouselExampleControls" class="carousel slide p-4 w-100" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div id='card1' class="d-block w-100 d-flex justify-content-center m-3"></div>
+              </div>
+              <div class="carousel-item">
+                <div id='card2' class="d-block w-100 d-flex justify-content-center m-3"></div>
+              </div>
+              <div class="carousel-item">
+                <div id='card3' class="d-block w-100 d-flex justify-content-center m-3"></div>
+              </div>
+              <div class="carousel-item">
+                <div id='card4' class="d-block w-100 d-flex justify-content-center m-3"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
+
 </html>
